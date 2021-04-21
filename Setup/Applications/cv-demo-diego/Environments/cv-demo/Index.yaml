@@ -3,7 +3,11 @@ type: ENVIRONMENT
 configMapYamlByServiceTemplateName: {}
 environmentType: NON_PROD
 variableOverrides:
-- name: baseUrl
+- name: stableEndpoint
   serviceName: cv-demo-ui
-  value: http://<load-balancer>
+  value: http://35.209.140.113
+  valueType: TEXT
+- name: canaryEndpoint
+  serviceName: cv-demo-ui
+  value: http://35.209.140.113
   valueType: TEXT
