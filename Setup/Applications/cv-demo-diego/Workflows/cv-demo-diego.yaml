@@ -8,6 +8,13 @@ failureStrategies:
   - APPLICATION_ERROR
   repairActionCode: ROLLBACK_WORKFLOW
   retryCount: 0
+- actionAfterTimeout: ROLLBACK
+  executionScope: WORKFLOW
+  failureTypes:
+  - AUTHENTICATION
+  manualInterventionTimeout: 1209600000
+  repairActionCode: MANUAL_INTERVENTION
+  retryCount: 0
 notificationRules:
 - conditions:
   - FAILED
