@@ -28,14 +28,6 @@ phases:
     failureStrategies:
     - failureTypes:
       - APPLICATION_ERROR
-      manualInterventionTimeout: 1209600000
-      repairActionCode: MANUAL_INTERVENTION
-      retryCount: 0
-    - actionAfterTimeout: ROLLBACK
-      executionScope: WORKFLOW
-      failureTypes:
-      - APPLICATION_ERROR
-      manualInterventionTimeout: 1209600000
       repairActionCode: MANUAL_INTERVENTION
       retryCount: 0
     name: Verify
