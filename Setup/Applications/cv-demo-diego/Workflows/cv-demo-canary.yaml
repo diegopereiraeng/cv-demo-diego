@@ -28,6 +28,7 @@ phases:
     failureStrategies:
     - failureTypes:
       - APPLICATION_ERROR
+      manualInterventionTimeout: 1209600000
       repairActionCode: MANUAL_INTERVENTION
       retryCount: 0
     name: Verify
@@ -111,7 +112,7 @@ phases:
       name: Approval
       properties:
         approvalStateType: USER_GROUP
-        timeoutMillis: 3600000
+        timeoutMillis: 360000
         userGroups: null
     stepsInParallel: false
   - type: K8S_PHASE_STEP
