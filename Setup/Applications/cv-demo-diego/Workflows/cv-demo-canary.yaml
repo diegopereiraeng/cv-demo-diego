@@ -10,7 +10,7 @@ failureStrategies:
   retryCount: 0
 phases:
 - type: KUBERNETES
-  computeProviderName: cv-demo
+  computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
   infraDefinitionName: cv-demo
   name: Canary
