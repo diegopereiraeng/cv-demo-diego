@@ -31,6 +31,8 @@ phases:
       manualInterventionTimeout: 1209600000
       repairActionCode: MANUAL_INTERVENTION
       retryCount: 0
+    - actionAfterTimeout: ROLLBACK
+      executionScope: WORKFLOW
     name: Verify
     stepSkipStrategies:
     - assertionExpression: ${workflow.variables.metric_verification} != "NewRelic" || ${workflow.variables.verify_canary} == "no"
