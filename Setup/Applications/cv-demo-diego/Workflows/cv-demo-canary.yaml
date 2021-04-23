@@ -8,6 +8,14 @@ failureStrategies:
   - APPLICATION_ERROR
   repairActionCode: ROLLBACK_WORKFLOW
   retryCount: 0
+notificationRules:
+- conditions:
+  - FAILED
+  executionScope: WORKFLOW
+  notificationGroupAsExpression: false
+  userGroupAsExpression: false
+  userGroupIds:
+  - PFIVcv84TVW6OEpQEDvmGw
 phases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
@@ -45,7 +53,7 @@ phases:
     - type: PROMETHEUS
       name: Prometheus
       properties:
-        analysisServerConfigId: Select Prometheus connector
+        analysisServerConfigId: PHxpU5O3S9CkapFquK9Yqg
         analysisTolerance: LOW
         comparisonStrategy: COMPARE_WITH_CURRENT
         customThresholdRefId: 0034526e5f2a4a3ea97011a559dda999
@@ -126,7 +134,7 @@ phases:
   serviceName: cv-demo
   statefulSet: false
 - type: KUBERNETES
-  computeProviderName: cv-demo
+  computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
   infraDefinitionName: cv-demo
   name: Primary
@@ -148,7 +156,7 @@ phases:
   statefulSet: false
 rollbackPhases:
 - type: KUBERNETES
-  computeProviderName: cv-demo
+  computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
   infraDefinitionName: cv-demo
   name: Rollback Canary
