@@ -5,7 +5,7 @@ environmentType: NON_PROD
 variableOverrides:
 - name: stableEndpoint
   serviceName: cv-demo-ui
-  value: http://35.209.140.113
+  value: http://34.121.70.58
   valueType: TEXT
 - name: canaryEndpoint
   serviceName: cv-demo-ui
