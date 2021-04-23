@@ -37,7 +37,7 @@ spec:
         backend:
           serviceName: {{.Values.name}}-stable
           servicePort: http-stable
-      - path: /(.*)
+      - path: /config
         backend:
           serviceName: {{.Values.name}}-stable
           servicePort: http-stable
