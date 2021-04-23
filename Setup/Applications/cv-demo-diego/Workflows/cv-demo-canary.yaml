@@ -73,10 +73,11 @@ phases:
     - type: ELK
       name: ELK
       properties:
-        analysisServerConfigId: Select ELK connector
+        analysisServerConfigId: o6RSJjxiQDOSf4clb1XWUQ
         comparisonStrategy: COMPARE_WITH_CURRENT
         executeWithPreviousSteps: true
         hostnameField: hostname
+        hostnameTemplate: ${instance.hostName}
         includePreviousPhaseNodes: false
         indices: cv-demo
         messageField: message
