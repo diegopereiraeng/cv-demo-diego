@@ -41,7 +41,7 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            cpu: 500m
+            cpu: 300m
             memory: 50Mi
         readinessProbe:
           httpGet:
