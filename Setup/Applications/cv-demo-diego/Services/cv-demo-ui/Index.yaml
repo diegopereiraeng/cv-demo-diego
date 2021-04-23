@@ -9,7 +9,7 @@ configVariables:
   value: ${serviceVariable.baseUrl}/api
   valueType: TEXT
 - name: baseUrl
-  value: http://localhost:8080
+  value: http://34.121.70.58:80
   valueType: TEXT
 deploymentType: KUBERNETES
 helmVersion: V2
