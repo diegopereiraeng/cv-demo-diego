@@ -33,7 +33,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /api/(.*)
+      - path: /(.*)
         backend:
           serviceName: {{.Values.name}}-stable
           servicePort: http-stable
