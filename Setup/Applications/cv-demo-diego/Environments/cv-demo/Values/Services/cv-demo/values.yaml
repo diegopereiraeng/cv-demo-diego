@@ -1,6 +1,6 @@
 env:
   config:
-    ALLOWED_ORIGINS: http://<load-balancer>
+    ALLOWED_ORIGINS: http://35.209.140.113
     
     # AppDynamics Settings
     # ENABLE_APPDYNAMICS: true
