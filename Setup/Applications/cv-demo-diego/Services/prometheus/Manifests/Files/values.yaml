@@ -1,3 +1,5 @@
 namespace: ${infra.kubernetes.namespace}
 
 loadBalancerIP: ""
+
+image: prom/prometheus:v2.12.0
