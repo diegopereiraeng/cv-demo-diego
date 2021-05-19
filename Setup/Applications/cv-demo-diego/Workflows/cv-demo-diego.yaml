@@ -147,6 +147,9 @@ phases:
       name: Slack-Message
       properties:
         executeWithPreviousSteps: false
+        headers:
+        - key: Content-type
+          value: application/json
         timeoutMillis: 0
       templateUri: Harness SE/Diego/Slack-Message:latest
       templateVariables:
