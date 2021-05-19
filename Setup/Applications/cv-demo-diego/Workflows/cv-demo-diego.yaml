@@ -154,7 +154,8 @@ phases:
         responseProcessingExpressions: ''
         sweepingOutputName: null
         sweepingOutputScope: null
-        tags: null
+        tags:
+        - diego-koala-delegate
         timeoutMillis: 30000
         useProxy: false
       templateUri: Harness SE/Diego/Slack-Message:latest
