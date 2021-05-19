@@ -159,8 +159,10 @@ phases:
         useProxy: false
       templateUri: Harness SE/Diego/Slack-Message:latest
       templateVariables:
-      - name: test
-        value: test
+      - name: Infra
+      - name: Message
+      - name: Author
+      - name: Status
     stepsInParallel: false
   provisionNodes: false
   serviceName: cv-demo
