@@ -27,17 +27,24 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: |+
+        scriptString: |
           export DeploymentURL=${deploymentUrl}
           echo $DeploymentURL
 
+          # Set comma as delimiter
+          IFS=','
 
+          read -a strarr <<< "$DeploymentURL"
+
+          echo "Execution ID : ${strarr[5] }"
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     stepsInParallel: false
   - type: WRAP_UP
