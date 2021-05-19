@@ -31,13 +31,12 @@ phases:
           export DeploymentURL=${deploymentUrl}
           echo $DeploymentURL
 
-          # Set comma as delimiter
-          IFS='/'
-
-          read -a strarr <<< "$DeploymentURL"
 
 
-          echo "Execution ID : "$strarr[5]
+          execID="$(cut -d'_' -f2 <<<"$DeploymentURL"
+
+
+          echo "Execution ID : "$execID
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
