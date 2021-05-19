@@ -150,7 +150,13 @@ phases:
         headers:
         - key: Content-type
           value: application/json
-        timeoutMillis: 0
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags: null
+        timeoutMillis: 30000
+        useProxy: false
       templateUri: Harness SE/Diego/Slack-Message:latest
       templateVariables:
       - name: test
