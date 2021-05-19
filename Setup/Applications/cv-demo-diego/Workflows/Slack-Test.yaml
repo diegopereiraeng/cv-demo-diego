@@ -33,10 +33,10 @@ phases:
 
 
 
-          execID="$(cut -d'/' -f2 <<<"$DeploymentURL")"
+          execID="$(cut -d'/' -f12 <<<'$DeploymentURL')"
 
 
-          echo "Execution ID : "$execID
+          echo "Execution ID : $execID"
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
