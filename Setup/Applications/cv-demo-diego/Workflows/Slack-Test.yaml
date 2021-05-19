@@ -17,6 +17,28 @@ phases:
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
+    steps:
+    - type: SHELL_SCRIPT
+      name: Shell Script
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: false
+        scriptString: |+
+          export DeploymentURL=${deploymentUrl}
+          echo $DeploymentURL
+
+
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
