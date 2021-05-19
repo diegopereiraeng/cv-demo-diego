@@ -160,7 +160,7 @@ phases:
       templateUri: Harness SE/Diego/Slack-Message:latest
       templateVariables:
       - name: test
-        value: tes
+        value: test
     stepsInParallel: false
   provisionNodes: false
   serviceName: cv-demo
