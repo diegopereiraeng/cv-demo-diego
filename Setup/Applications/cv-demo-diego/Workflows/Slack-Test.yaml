@@ -14,6 +14,21 @@ phases:
   phaseSteps:
   - type: PREPARE_STEPS
     name: Prepare Steps
+    steps:
+    - type: HTTP
+      name: Slack-Message
+      properties:
+        executeWithPreviousSteps: false
+        headers:
+        - key: Content-type
+          value: application/json
+        timeoutMillis: 30000
+      templateUri: Harness SE/Diego/Slack-Message:latest
+      templateVariables:
+      - name: Infra
+      - name: Message
+      - name: Author
+      - name: Status
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
