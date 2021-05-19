@@ -36,7 +36,8 @@ phases:
 
           read -a strarr <<< "$DeploymentURL"
 
-          echo "Execution ID : ${strarr[5] }"
+
+          echo "Execution ID : "$strarr[5]
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
