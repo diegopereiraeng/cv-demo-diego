@@ -27,16 +27,25 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: |
+        scriptString: |+
           export DeploymentURL=${deploymentUrl}
           echo $DeploymentURL
 
+          echo ${deploymentTriggeredBy}
+
+          echo ${app.name}
+
+          echo ${workflow.displayName}
+
+          echo ${pipeline.name}
 
 
           execID="$(cut -d'/' -f12 <<<$DeploymentURL)"
 
 
           echo "Execution ID : $execID"
+
+
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
