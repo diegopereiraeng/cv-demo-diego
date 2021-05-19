@@ -33,7 +33,7 @@ phases:
 
 
 
-          execID="$(cut -d'_' -f2 <<<"$DeploymentURL"
+          execID="$(cut -d'/' -f2 <<<"$DeploymentURL"
 
 
           echo "Execution ID : "$execID
