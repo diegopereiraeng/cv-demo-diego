@@ -22,13 +22,23 @@ phases:
         headers:
         - key: Content-type
           value: application/json
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags: null
         timeoutMillis: 30000
+        useProxy: false
       templateUri: Harness SE/Diego/Slack-Message:latest
       templateVariables:
       - name: Infra
+        value: Dev
       - name: Message
+        value: Test
       - name: Author
+        value: Diego Pereira
       - name: Status
+        value: Success
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
