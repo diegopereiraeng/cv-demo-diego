@@ -126,7 +126,7 @@ phases:
   serviceName: cv-demo
   statefulSet: false
 - type: KUBERNETES
-  computeProviderName: cv-demo
+  computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
   infraDefinitionName: cv-demo
   name: Primary
@@ -142,6 +142,16 @@ phases:
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
+    steps:
+    - type: HTTP
+      name: Slack-Message
+      properties:
+        executeWithPreviousSteps: false
+        timeoutMillis: 0
+      templateUri: Harness SE/Diego/Slack-Message:latest
+      templateVariables:
+      - name: test
+        value: tes
     stepsInParallel: false
   provisionNodes: false
   serviceName: cv-demo
@@ -176,7 +186,7 @@ rollbackPhases:
   serviceName: cv-demo
   statefulSet: false
 - type: KUBERNETES
-  computeProviderName: cv-demo
+  computeProviderName: Kubernetes Cluster Diego-GKE
   daemonSet: false
   infraDefinitionName: cv-demo
   name: Rollback Primary
