@@ -150,13 +150,23 @@ phases:
         headers:
         - key: Content-type
           value: application/json
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags: null
         timeoutMillis: 30000
+        useProxy: false
       templateUri: Harness SE/Diego/Slack-Message:latest
       templateVariables:
       - name: Infra
+        value: ${infra.name}
       - name: Message
+        value: Deployed
       - name: Author
+        value: ${deploymentTriggeredBy}
       - name: Status
+        value: Success
     stepsInParallel: false
   provisionNodes: false
   serviceName: cv-demo
