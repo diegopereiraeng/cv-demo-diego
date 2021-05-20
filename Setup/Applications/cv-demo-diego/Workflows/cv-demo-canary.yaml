@@ -67,7 +67,7 @@ phases:
       - name: App
         value: ${app.name}
       - name: Workflow
-        value: ${workflow.displayName}
+        value: ${workflow.name}
       - name: Pipeline
         value: '-'
       - name: triggered
