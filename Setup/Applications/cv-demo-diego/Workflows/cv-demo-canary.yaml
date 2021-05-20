@@ -41,20 +41,28 @@ phases:
         instanceUnitType: COUNT
         instances: '1'
     - type: SHELL_SCRIPT
-      name: Slack Notification Pipeline
+      name: Slack Notification Canary Deployed
       properties:
+        commandPath: null
+        connectionAttributes: null
         executeOnDelegate: true
+        host: null
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
         timeoutMillis: 600000
       templateUri: Harness SE/Diego/Slack Notification Pipeline:latest
       templateVariables:
       - name: Message
-        value: New Deployment triggered by Diego Pereira
+        value: Canary deployed - Verifying Metrics...
       - name: App
         value: ${app.name}
       - name: Workflow
         value: ${workflow.displayName}
       - name: Pipeline
-        value: ${pipeline.name}
+        value: '-'
       - name: triggered
         value: ${deploymentTriggeredBy}
       - name: deploymentURL
