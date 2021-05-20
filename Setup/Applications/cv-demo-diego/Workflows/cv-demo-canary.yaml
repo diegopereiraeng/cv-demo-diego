@@ -16,6 +16,15 @@ notificationRules:
   userGroupAsExpression: false
   userGroupIds:
   - PFIVcv84TVW6OEpQEDvmGw
+- conditions:
+  - SUCCESS
+  - FAILED
+  - PAUSED
+  executionScope: WORKFLOW
+  notificationGroupAsExpression: false
+  userGroupAsExpression: false
+  userGroupIds:
+  - V04HA3qrSleRPFexdrm6lw
 phases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
