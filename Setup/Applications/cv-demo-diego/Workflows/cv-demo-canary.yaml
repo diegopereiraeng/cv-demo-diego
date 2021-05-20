@@ -78,6 +78,8 @@ phases:
         value: Workflow
       - name: style
         value: primary
+      - name: Title
+        value: Deployed triggered by ${deploymentTriggeredBy}
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
@@ -200,6 +202,8 @@ phases:
         value: Workflow
       - name: style
         value: primary
+      - name: Title
+        value: Deployed triggered by ${deploymentTriggeredBy}
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
@@ -286,6 +290,8 @@ preDeploymentSteps:
     value: Workflow
   - name: style
     value: primary
+  - name: Title
+    value: Deployed triggered by ${deploymentTriggeredBy}
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
@@ -338,6 +344,8 @@ rollbackPhases:
         value: Workflow
       - name: style
         value: primary
+      - name: Title
+        value: Deployed triggered by ${deploymentTriggeredBy}
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
