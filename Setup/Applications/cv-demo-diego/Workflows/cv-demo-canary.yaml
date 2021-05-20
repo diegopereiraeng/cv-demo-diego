@@ -187,7 +187,7 @@ phases:
       templateUri: Harness SE/Diego/Slack Notification Pipeline:latest
       templateVariables:
       - name: Message
-        value: New Deployment triggered by Diego Pereira
+        value: Verification completed
       - name: App
         value: ${app.name}
       - name: Workflow
@@ -203,7 +203,7 @@ phases:
       - name: style
         value: primary
       - name: Title
-        value: Deployed triggered by ${deploymentTriggeredBy}
+        value: Verification Completed with Success
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
