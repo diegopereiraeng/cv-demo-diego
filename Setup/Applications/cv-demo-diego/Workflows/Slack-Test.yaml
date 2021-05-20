@@ -73,11 +73,11 @@ phases:
       - name: Message
         value: '"New Deployment triggered by Diego"'
       - name: App
-        value: ${app.name}
+        value: ${app.name}"
       - name: Workflow
-        value: ${workflow.displayName}
+        value: ${workflow.displayName}"
       - name: Pipeline
-        value: ${pipeline.name}
+        value: ${pipeline.name}"
       - name: triggered
         value: Teste123
       - name: deploymentURL
