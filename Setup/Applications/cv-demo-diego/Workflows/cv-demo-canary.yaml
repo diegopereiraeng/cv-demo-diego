@@ -70,7 +70,7 @@ phases:
       - name: Type
         value: Workflow
       - name: style
-        value: alert
+        value: primary
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
