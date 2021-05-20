@@ -187,7 +187,7 @@ phases:
       value: INFRASTRUCTURE_DEFINITION
 preDeploymentSteps:
 - type: SHELL_SCRIPT
-  name: Slack Notification Pipeline
+  name: Slack Notification Kickoff
   properties:
     commandPath: null
     connectionAttributes: null
