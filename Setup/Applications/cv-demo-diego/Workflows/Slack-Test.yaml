@@ -68,7 +68,7 @@ phases:
         sweepingOutputScope: null
         templateExpressions: null
         timeoutMillis: 600000
-      templateUri: Harness SE/Diego/Slack Notification:latest
+      templateUri: Harness SE/Diego/Slack Notification Pipeline:latest
       templateVariables:
       - name: Message
         value: New Deployment triggered by ${deploymentTriggeredBy}
@@ -82,6 +82,10 @@ phases:
         value: ${deploymentTriggeredBy}
       - name: deploymentURL
         value: ${deploymentUrl}
+      - name: Type
+        value: Workflow
+      - name: style
+        value: alert
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
