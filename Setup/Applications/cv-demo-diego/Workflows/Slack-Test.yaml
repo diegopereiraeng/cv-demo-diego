@@ -72,6 +72,16 @@ phases:
       templateVariables:
       - name: Message
         value: Hello
+      - name: App
+        value: ${app.name}
+      - name: Workflow
+        value: ${workflow.displayName}
+      - name: Pipeline
+        value: ${pipeline.name}
+      - name: triggered
+        value: ${deploymentTriggeredBy}
+      - name: deploymentURL
+        value: ${deploymentUrl}
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
