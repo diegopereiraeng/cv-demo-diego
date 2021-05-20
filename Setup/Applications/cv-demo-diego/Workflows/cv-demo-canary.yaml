@@ -301,20 +301,28 @@ rollbackPhases:
         templateVariables: null
         templateVersion: null
     - type: SHELL_SCRIPT
-      name: Slack Notification Pipeline
+      name: Slack Notification Rollback with Success
       properties:
+        commandPath: null
+        connectionAttributes: null
         executeOnDelegate: true
+        host: null
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
         timeoutMillis: 600000
       templateUri: Harness SE/Diego/Slack Notification Pipeline:latest
       templateVariables:
       - name: Message
-        value: New Deployment triggered by Diego Pereira
+        value: Rollback with Success
       - name: App
         value: ${app.name}
       - name: Workflow
         value: ${workflow.displayName}
       - name: Pipeline
-        value: ${pipeline.name}
+        value: '-'
       - name: triggered
         value: ${deploymentTriggeredBy}
       - name: deploymentURL
@@ -322,7 +330,7 @@ rollbackPhases:
       - name: Type
         value: Workflow
       - name: style
-        value: alert
+        value: primary
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
