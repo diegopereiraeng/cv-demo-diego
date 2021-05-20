@@ -58,22 +58,30 @@ phases:
     - type: SHELL_SCRIPT
       name: Slack Notification
       properties:
+        commandPath: null
+        connectionAttributes: null
         executeOnDelegate: true
+        host: null
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
         timeoutMillis: 600000
       templateUri: Harness SE/Diego/Slack Notification:latest
       templateVariables:
       - name: Message
         value: New Deployment triggered by Diego Pereira
       - name: App
-        value: ${app.name}
+        value: test app
       - name: Workflow
-        value: ${workflow.displayName}
+        value: worflow123
       - name: Pipeline
-        value: ${pipeline.name}
+        value: pipe123
       - name: triggered
-        value: ${deploymentTriggeredBy}
+        value: Diego
       - name: deploymentURL
-        value: ${deploymentUrl}
+        value: http://www.google.com
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
