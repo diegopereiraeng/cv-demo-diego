@@ -68,7 +68,7 @@ phases:
         sweepingOutputScope: null
         templateExpressions: null
         timeoutMillis: 600000
-      templateUri: Harness SE/Diego/Slack-Notification:latest
+      templateUri: Harness SE/Diego/Slack Notification:latest
       templateVariables:
       - name: Message
         value: New Deployment triggered by ${deploymentTriggeredBy}
