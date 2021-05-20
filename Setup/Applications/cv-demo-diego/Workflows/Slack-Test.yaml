@@ -77,7 +77,7 @@ phases:
       - name: Workflow
         value: ${workflow.displayName}
       - name: Pipeline
-        value: ${pipeline.name}
+        value: Pipe
       - name: triggered
         value: ${deploymentTriggeredBy}
       - name: deploymentURL
