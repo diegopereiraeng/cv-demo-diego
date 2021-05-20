@@ -63,7 +63,7 @@ phases:
       templateUri: Harness SE/Diego/Slack Notification Pipeline:latest
       templateVariables:
       - name: Message
-        value: Canary deployed - Verifying Metrics...
+        value: Canary deployed
       - name: App
         value: ${app.name}
       - name: Workflow
@@ -79,7 +79,7 @@ phases:
       - name: style
         value: primary
       - name: Title
-        value: Deployed triggered by ${deploymentTriggeredBy}
+        value: Verifying Metrics...
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
