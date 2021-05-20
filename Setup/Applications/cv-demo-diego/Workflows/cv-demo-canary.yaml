@@ -189,18 +189,26 @@ preDeploymentSteps:
 - type: SHELL_SCRIPT
   name: Slack Notification Pipeline
   properties:
+    commandPath: null
+    connectionAttributes: null
     executeOnDelegate: true
+    host: null
+    publishAsVar: false
+    sshKeyRef: null
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    templateExpressions: null
     timeoutMillis: 600000
   templateUri: Harness SE/Diego/Slack Notification Pipeline:latest
   templateVariables:
   - name: Message
-    value: New Deployment triggered by Diego Pereira
+    value: Starting Canary Phase
   - name: App
     value: ${app.name}
   - name: Workflow
     value: ${workflow.displayName}
   - name: Pipeline
-    value: ${pipeline.name}
+    value: '-'
   - name: triggered
     value: ${deploymentTriggeredBy}
   - name: deploymentURL
@@ -208,7 +216,7 @@ preDeploymentSteps:
   - name: Type
     value: Workflow
   - name: style
-    value: alert
+    value: primary
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
