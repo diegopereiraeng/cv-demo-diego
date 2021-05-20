@@ -32,7 +32,7 @@ phases:
           echo $DeploymentURL
 
           echo ${deploymentTriggeredBy}
-
+          echo ${infra.name}
           echo ${app.name}
 
           echo ${workflow.displayName}
