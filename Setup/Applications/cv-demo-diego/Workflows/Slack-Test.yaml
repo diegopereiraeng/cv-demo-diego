@@ -81,7 +81,7 @@ phases:
       - name: triggered
         value: Teste123
       - name: deploymentURL
-        value: ${deploymentUrl}
+        value: '"${deploymentUrl}"'
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
