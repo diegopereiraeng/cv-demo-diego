@@ -329,7 +329,7 @@ rollbackPhases:
       templateUri: Harness SE/Diego/Slack Notification Pipeline:latest
       templateVariables:
       - name: Message
-        value: Rollback with Success
+        value: '-'
       - name: App
         value: ${app.name}
       - name: Workflow
@@ -345,7 +345,7 @@ rollbackPhases:
       - name: style
         value: primary
       - name: Title
-        value: Deployed triggered by ${deploymentTriggeredBy}
+        value: Rollback with Success
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
