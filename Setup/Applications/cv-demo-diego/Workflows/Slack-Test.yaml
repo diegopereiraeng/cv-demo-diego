@@ -71,7 +71,7 @@ phases:
       templateUri: Harness SE/Diego/Slack Notification:latest
       templateVariables:
       - name: Message
-        value: New Deployment triggered by Diego Pereira
+        value: New Deployment triggered by Diego
       - name: App
         value: ${app.name}
       - name: Workflow
@@ -79,7 +79,7 @@ phases:
       - name: Pipeline
         value: ${pipeline.name}
       - name: triggered
-        value: ${deploymentTriggeredBy}
+        value: Teste123
       - name: deploymentURL
         value: ${deploymentUrl}
     stepsInParallel: false
