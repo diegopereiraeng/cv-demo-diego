@@ -40,6 +40,29 @@ phases:
       properties:
         instanceUnitType: COUNT
         instances: '1'
+    - type: SHELL_SCRIPT
+      name: Slack Notification Pipeline
+      properties:
+        executeOnDelegate: true
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Slack Notification Pipeline:latest
+      templateVariables:
+      - name: Message
+        value: New Deployment triggered by Diego Pereira
+      - name: App
+        value: ${app.name}
+      - name: Workflow
+        value: ${workflow.displayName}
+      - name: Pipeline
+        value: ${pipeline.name}
+      - name: triggered
+        value: ${deploymentTriggeredBy}
+      - name: deploymentURL
+        value: ${deploymentUrl}
+      - name: Type
+        value: Workflow
+      - name: style
+        value: alert
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
