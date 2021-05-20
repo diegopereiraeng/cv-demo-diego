@@ -86,6 +86,8 @@ phases:
         value: Workflow
       - name: style
         value: alert
+      - name: Title
+        value: Deployed triggered by ${deploymentTriggeredBy}
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
