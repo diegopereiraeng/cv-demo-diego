@@ -55,6 +55,15 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 60000
+    - type: SHELL_SCRIPT
+      name: Slack-Notification
+      properties:
+        executeOnDelegate: true
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Slack-Notification:latest
+      templateVariables:
+      - name: Message
+        value: Hello
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
