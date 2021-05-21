@@ -130,3 +130,17 @@ pipelineStages:
     value: RING-1
   - name: metric_verification
     value: Prometheus
+- type: APPROVAL
+  name: Approval 8
+  parallel: false
+  properties:
+    userGroups:
+    - Slack-Notification-Demo
+    variables: null
+    stageName: STAGE 9
+    timeoutMillis: 1209600000
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 9
