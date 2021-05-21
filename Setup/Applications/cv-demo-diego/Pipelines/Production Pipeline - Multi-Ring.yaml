@@ -35,6 +35,20 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: test
+- type: APPROVAL
+  name: Approval 2
+  parallel: false
+  properties:
+    userGroups:
+    - Slack-Notification-Demo
+    variables: null
+    stageName: STAGE 3
+    timeoutMillis: 86400000
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 3
 - type: ENV_STATE
   name: Rollout with Tests-1
   parallel: false
