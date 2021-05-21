@@ -126,7 +126,7 @@ pipelineStages:
   workflowName: Canary Workflow - Verification
   workflowVariables:
   - name: verify_canary
-    value: 'no'
+    value: 'yes'
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
