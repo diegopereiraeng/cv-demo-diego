@@ -79,6 +79,23 @@ phases:
         value: primary
       - name: Title
         value: Canary deployed - Verifying Metrics using Machine Learning
+    - type: SHELL_SCRIPT
+      name: Slack Message
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Slack Message:latest
+      templateVariables:
+      - name: Message
+        value: During this verification process you maybe want to receive a notification and take a look in what is going on!
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
