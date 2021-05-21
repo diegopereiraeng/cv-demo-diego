@@ -9,3 +9,4 @@ env:
 
   secret: {}
 
+namespace: ${env.name}
