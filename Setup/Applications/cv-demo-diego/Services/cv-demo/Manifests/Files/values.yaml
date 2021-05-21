@@ -10,3 +10,4 @@ env:
   secret: {}
 
 namespace: ${env.name}
+createNamespace: true
