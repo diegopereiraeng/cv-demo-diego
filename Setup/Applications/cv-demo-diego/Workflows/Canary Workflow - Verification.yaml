@@ -311,6 +311,9 @@ phases:
       value: DOCKER
     - name: entityType
       value: SERVICE
+postDeploymentStepSkipStrategy:
+- assertionExpression: ${workflow.variables.notify_slack} == "no"
+  scope: ALL_STEPS
 postDeploymentSteps:
 - type: SHELL_SCRIPT
   name: Slack Message
