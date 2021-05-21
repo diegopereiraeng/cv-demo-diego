@@ -394,6 +394,11 @@ rollbackPhases:
     name: Deploy
     phaseStepNameForRollback: Deploy
     statusForRollback: SUCCESS
+    stepSkipStrategies:
+    - assertionExpression: ${workflow.variables.notify_slack} == "no"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Slack Notification Rollback with Success
     steps:
     - type: K8S_DELETE
       name: Delete Canary
