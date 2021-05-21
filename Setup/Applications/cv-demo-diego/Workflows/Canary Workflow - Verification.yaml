@@ -319,6 +319,9 @@ postDeploymentSteps:
   templateVariables:
   - name: Message
     value: and them you can send  a message to a different group or just wait for our deployment notification.
+preDeploymentStepSkipStrategy:
+- assertionExpression: ${workflow.variables.notify_slack} == "no"
+  scope: ALL_STEPS
 preDeploymentSteps:
 - type: SHELL_SCRIPT
   name: Slack Message
