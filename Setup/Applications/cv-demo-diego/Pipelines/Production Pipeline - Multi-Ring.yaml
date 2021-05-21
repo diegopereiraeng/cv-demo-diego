@@ -163,6 +163,9 @@ pipelineStages:
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
+  - entityType: SERVICE
+    name: Service
+    value: ${Service}
   - entityType: INFRASTRUCTURE_DEFINITION
     name: INFRA
     value: RING-2
