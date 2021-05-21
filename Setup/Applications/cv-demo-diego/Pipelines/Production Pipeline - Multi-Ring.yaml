@@ -136,11 +136,10 @@ pipelineStages:
   properties:
     userGroups:
     - Slack-Notification-Demo
-    variables: null
-    stageName: STAGE 9
+    stageName: RING 2 - APPROVAL
     timeoutMillis: 1209600000
     approvalStateType: USER_GROUP
     sweepingOutputName: ''
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: STAGE 9
+  stageName: RING 2 - APPROVAL
