@@ -176,6 +176,17 @@ phases:
         executeWithPreviousSteps: true
         includePreviousPhaseNodes: false
         timeDuration: '10'
+    - type: APPROVAL
+      name: Approval
+      properties:
+        approvalStateType: USER_GROUP
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 3600000
+        userGroups:
+        - xsUUKuxzQ8upFNUpt7wBYQ
+        - u-mGHdFRQA-NJj_KMnhTFQ
     - type: SHELL_SCRIPT
       name: Slack Notification Verification Completed
       properties:
@@ -209,17 +220,6 @@ phases:
         value: primary
       - name: Title
         value: Verification Completed with Success - Waiting for Approval
-    - type: APPROVAL
-      name: Approval
-      properties:
-        approvalStateType: USER_GROUP
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 3600000
-        userGroups:
-        - xsUUKuxzQ8upFNUpt7wBYQ
-        - u-mGHdFRQA-NJj_KMnhTFQ
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
