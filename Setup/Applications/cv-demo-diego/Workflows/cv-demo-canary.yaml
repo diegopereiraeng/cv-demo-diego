@@ -290,7 +290,7 @@ preDeploymentSteps:
   templateUri: Harness SE/Diego/Slack Notification Pipeline Workflow:latest
   templateVariables:
   - name: Message
-    value: Starting Canary Phase
+    value: You also can send beautiful messages
   - name: App
     value: ${app.name}
   - name: Workflow
@@ -306,7 +306,7 @@ preDeploymentSteps:
   - name: style
     value: primary
   - name: Title
-    value: Deployed triggered by ${deploymentTriggeredBy}
+    value: Starting Canary Phase
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
