@@ -23,7 +23,7 @@ pipelineStages:
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: STAGE 2
+  stageName: QA - TEST
   workflowName: Rollout with Tests
   workflowVariables:
   - entityType: ENVIRONMENT
@@ -41,6 +41,7 @@ pipelineStages:
   properties:
     userGroups:
     - Slack-Notification-Demo
+    workflowVariables: null
     stageName: STAGE APPROVAL
     timeoutMillis: 86400000
     approvalStateType: USER_GROUP
