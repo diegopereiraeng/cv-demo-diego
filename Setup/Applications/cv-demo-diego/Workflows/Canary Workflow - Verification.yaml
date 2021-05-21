@@ -520,3 +520,9 @@ userVariables:
   mandatory: true
   name: metric_verification
   value: Prometheus
+- type: TEXT
+  allowedValues: yes,no
+  fixed: false
+  mandatory: true
+  name: notify_slack
+  value: 'no'
