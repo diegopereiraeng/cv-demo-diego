@@ -117,7 +117,7 @@ pipelineStages:
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: STAGE 8
+  stageName: RING 1
   workflowName: Canary Workflow - Verification
   workflowVariables:
   - name: verify_canary
