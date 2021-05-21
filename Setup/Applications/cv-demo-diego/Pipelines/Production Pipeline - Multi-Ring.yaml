@@ -145,7 +145,7 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: RING 2 - APPROVAL
 - type: ENV_STATE
-  name: Canary Workflow - Verification-1
+  name: RING 2
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
