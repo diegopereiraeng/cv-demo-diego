@@ -81,11 +81,11 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: PROD - RING 0 - APPROVAL
 - type: ENV_STATE
-  name: Canary Workflow - Verification
+  name: PROD - RING 0 - Canary Workflow - Verification
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: STAGE 6
+  stageName: RING 0
   workflowName: Canary Workflow - Verification
   workflowVariables:
   - name: verify_canary
