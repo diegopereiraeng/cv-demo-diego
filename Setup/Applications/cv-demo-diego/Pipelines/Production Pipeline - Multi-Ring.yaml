@@ -89,7 +89,7 @@ pipelineStages:
   workflowName: Canary Workflow - Verification
   workflowVariables:
   - name: verify_canary
-    value: 'no'
+    value: 'yes'
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
@@ -102,7 +102,7 @@ pipelineStages:
   - name: metric_verification
     value: Prometheus
   - name: notify_slack
-    value: 'no'
+    value: 'yes'
 - type: APPROVAL
   name: Approval 6
   parallel: false
