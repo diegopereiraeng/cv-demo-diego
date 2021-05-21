@@ -42,7 +42,7 @@ pipelineStages:
     value: cv-demo
   - entityType: INFRASTRUCTURE_DEFINITION
     name: INFRA
-    value: ring-0
+    value: gke
   - name: metric_verification
     value: Prometheus
   - name: notify_slack
