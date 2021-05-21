@@ -48,7 +48,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 10000
-        url: http://${service.name}.${infra.kubernetes.namespace}.svc.cluster.local:8080
+        url: http://34.121.70.58/
         useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
