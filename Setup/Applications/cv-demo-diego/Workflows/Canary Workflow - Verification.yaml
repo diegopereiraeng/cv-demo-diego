@@ -106,6 +106,10 @@ phases:
   - type: K8S_PHASE_STEP
     name: Verify
     stepSkipStrategies:
+    - assertionExpression: ${workflow.variables.notify_slack} == "no"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Slack Notification Verification Completed
     - assertionExpression: ${workflow.variables.metric_verification} != "NewRelic" || ${workflow.variables.verify_canary} == "no"
       scope: SPECIFIC_STEPS
       steps:
