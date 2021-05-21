@@ -50,7 +50,7 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: STAGE APPROVAL
 - type: ENV_STATE
-  name: Rollout with Tests-1
+  name: QA Stage Deployment
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
