@@ -290,6 +290,24 @@ preDeploymentSteps:
     value: primary
   - name: Title
     value: Deployed triggered by ${deploymentTriggeredBy}
+- type: HTTP
+  name: Slack-Message
+  properties:
+    executeWithPreviousSteps: false
+    headers:
+    - key: Content-type
+      value: application/json
+    timeoutMillis: 30000
+  templateUri: Harness SE/Diego/Slack-Message:latest
+  templateVariables:
+  - name: Infra
+    value: teste
+  - name: Message
+    value: teste
+  - name: Author
+    value: teste
+  - name: Status
+    value: teste
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
