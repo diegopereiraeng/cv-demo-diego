@@ -232,6 +232,9 @@ phases:
         value: Verification Completed with Success - Waiting for Approval
     stepsInParallel: false
   - type: K8S_PHASE_STEP
+    name: Load and Config
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
     name: Wrap Up
     steps:
     - type: K8S_DELETE
