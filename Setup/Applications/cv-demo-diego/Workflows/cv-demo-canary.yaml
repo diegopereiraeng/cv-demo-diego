@@ -290,6 +290,12 @@ preDeploymentSteps:
     value: primary
   - name: Title
     value: Deployed triggered by ${deploymentTriggeredBy}
+- type: SHELL_SCRIPT
+  name: Slack Message
+  properties:
+    executeOnDelegate: true
+    timeoutMillis: 600000
+  templateUri: Harness SE/Diego/Slack Message:latest
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
