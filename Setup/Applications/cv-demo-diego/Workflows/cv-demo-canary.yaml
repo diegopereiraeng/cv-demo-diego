@@ -203,7 +203,7 @@ phases:
       templateUri: Harness SE/Diego/Slack Notification Pipeline Workflow:latest
       templateVariables:
       - name: Message
-        value: Verification completed
+        value: Also you can send a notification before an approval and report the last status
       - name: App
         value: ${app.name}
       - name: Workflow
