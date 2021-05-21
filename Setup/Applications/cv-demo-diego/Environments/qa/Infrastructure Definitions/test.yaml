@@ -5,5 +5,5 @@ deploymentType: KUBERNETES
 infrastructure:
 - type: DIRECT_KUBERNETES
   cloudProviderName: Kubernetes Cluster Diego-GKE
-  namespace: cv-demo-${infra.name}
+  namespace: ${service.name}-test
   releaseName: release-${infra.kubernetes.infraId}
