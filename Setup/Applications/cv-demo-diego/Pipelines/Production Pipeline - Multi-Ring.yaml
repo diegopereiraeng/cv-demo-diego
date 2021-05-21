@@ -171,3 +171,5 @@ pipelineStages:
     value: RING-2
   - name: metric_verification
     value: Prometheus
+  - name: notify_slack
+    value: 'yes'
