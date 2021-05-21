@@ -79,7 +79,7 @@ phases:
       templateUri: Harness SE/Diego/Slack Notification Pipeline Workflow:latest
       templateVariables:
       - name: Message
-        value: Deployment started
+        value: 'like this example below:'
       - name: App
         value: ${app.name}
       - name: Workflow
