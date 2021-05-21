@@ -219,7 +219,7 @@ phases:
       - name: style
         value: primary
       - name: Title
-        value: Verification Completed with Success
+        value: Verification Completed with Success - Waiting for Approval
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
