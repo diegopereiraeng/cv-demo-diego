@@ -296,6 +296,8 @@ preDeploymentSteps:
     executeOnDelegate: true
     timeoutMillis: 600000
   templateUri: Harness SE/Diego/Slack Message:latest
+  templateVariables:
+  - name: Message
 rollbackPhases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
