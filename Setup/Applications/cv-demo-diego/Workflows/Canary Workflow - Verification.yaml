@@ -110,7 +110,7 @@ phases:
       scope: ALL_STEPS
     steps:
     - type: HTTP
-      name: Canary Configuration
+      name: Canary Error Configuration
       properties:
         assertion: ''
         body: |-
