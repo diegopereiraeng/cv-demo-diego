@@ -253,8 +253,6 @@ phases:
   - type: K8S_PHASE_STEP
     name: Deploy
     steps:
-    - type: K8S_DEPLOYMENT_ROLLING
-      name: Rollout Deployment
     - type: APPROVAL
       name: Slack Approval
       properties:
@@ -262,6 +260,8 @@ phases:
         timeoutMillis: 86400000
         userGroups:
         - V04HA3qrSleRPFexdrm6lw
+    - type: K8S_DEPLOYMENT_ROLLING
+      name: Rollout Deployment
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
