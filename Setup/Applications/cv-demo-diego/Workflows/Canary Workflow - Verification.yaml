@@ -135,7 +135,7 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
-        timeDuration: 10
+        timeDuration: 5
         timeSeriesToAnalyze:
         - metricName: normal_call
           metricType: THROUGHPUT
