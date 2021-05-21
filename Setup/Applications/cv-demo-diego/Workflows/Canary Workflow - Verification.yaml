@@ -110,7 +110,7 @@ phases:
       scope: ALL_STEPS
     steps:
     - type: HTTP
-      name: HTTP
+      name: Canary Configuration
       properties:
         assertion: ''
         body: |-
@@ -141,7 +141,9 @@ phases:
         sweepingOutputName: null
         sweepingOutputScope: null
         tags: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
         url: http://34.121.70.58/canary/config
         useProxy: false
