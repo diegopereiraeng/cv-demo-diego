@@ -104,6 +104,9 @@ phases:
         value: Canary deployed - Verifying Metrics using Machine Learning
     stepsInParallel: false
   - type: K8S_PHASE_STEP
+    name: Load and Config
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
     name: Verify
     stepSkipStrategies:
     - assertionExpression: ${workflow.variables.notify_slack} == "no"
@@ -230,9 +233,6 @@ phases:
         value: primary
       - name: Title
         value: Verification Completed with Success - Waiting for Approval
-    stepsInParallel: false
-  - type: K8S_PHASE_STEP
-    name: Load and Config
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
