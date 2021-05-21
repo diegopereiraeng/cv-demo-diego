@@ -168,6 +168,8 @@ pipelineStages:
   workflowVariables:
   - name: verify_canary
     value: 'yes'
+  - name: canary_configuration
+    value: error
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
