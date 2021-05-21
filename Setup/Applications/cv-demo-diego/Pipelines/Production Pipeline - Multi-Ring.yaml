@@ -72,6 +72,7 @@ pipelineStages:
   properties:
     userGroups:
     - Slack-Notification-Demo
+    workflowVariables: null
     stageName: PROD - RING 0 - APPROVAL
     timeoutMillis: 86400000
     approvalStateType: USER_GROUP
@@ -79,3 +80,21 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: PROD - RING 0 - APPROVAL
+- type: ENV_STATE
+  name: Canary Workflow - Verification
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 6
+  workflowName: Canary Workflow - Verification
+  workflowVariables:
+  - name: verify_canary
+    value: 'no'
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: prod
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: INFRA
+    value: RING-0
+  - name: metric_verification
+    value: Prometheus
