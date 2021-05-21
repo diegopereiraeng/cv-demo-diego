@@ -630,3 +630,9 @@ userVariables:
   mandatory: true
   name: notify_slack
   value: 'no'
+- type: TEXT
+  allowedValues: good,error
+  fixed: false
+  mandatory: true
+  name: canary_configuration
+  value: error
