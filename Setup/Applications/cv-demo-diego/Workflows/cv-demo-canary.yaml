@@ -273,6 +273,15 @@ phases:
       value: DOCKER
     - name: entityType
       value: INFRASTRUCTURE_DEFINITION
+postDeploymentSteps:
+- type: SHELL_SCRIPT
+  name: Slack Message
+  properties:
+    executeOnDelegate: true
+    timeoutMillis: 600000
+  templateUri: Harness SE/Diego/Slack Message:latest
+  templateVariables:
+  - name: Message
 preDeploymentSteps:
 - type: SHELL_SCRIPT
   name: Slack Message
