@@ -2,11 +2,11 @@ harnessApiVersion: '1.0'
 type: PIPELINE
 pipelineStages:
 - type: ENV_STATE
-  name: Simple Rollout
+  name: Dev Deployment
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: STAGE 1
+  stageName: DEV
   workflowName: Simple Rollout
   workflowVariables:
   - entityType: ENVIRONMENT
