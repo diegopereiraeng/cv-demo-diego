@@ -302,7 +302,7 @@ postDeploymentSteps:
   templateUri: Harness SE/Diego/Slack Message:latest
   templateVariables:
   - name: Message
-    value: and them you can send  a message to a different group or just wait for or deployment notification.
+    value: and them you can send  a message to a different group or just wait for our deployment notification.
 preDeploymentSteps:
 - type: SHELL_SCRIPT
   name: Slack Message
