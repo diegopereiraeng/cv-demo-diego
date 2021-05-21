@@ -147,6 +147,44 @@ phases:
         timeoutMillis: 10000
         url: http://34.121.70.58/canary/config
         useProxy: false
+    - type: HTTP
+      name: Canary Good Configuration
+      properties:
+        assertion: ''
+        body: |-
+          {
+              "running": true,
+              "logConfig": {
+                  "logsPerMinute": 120,
+                  "errorRate": 50,
+                  "errorMessage": "BadThingHappenedException"
+              },
+              "metricConfig": {
+                  "callsPerMinute": 100,
+                  "errorRate": 80.0,
+                  "minErrorValue": 0.3,
+                  "maxErrorValue": 1.0,
+                  "shouldDoDelayedCalls": true
+              }
+          }
+        executeWithPreviousSteps: false
+        headers:
+        - key: Accept
+          value: application/json
+        - key: Content-Type
+          value: application/json
+        method: POST
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 10000
+        url: http://34.121.70.58/canary/config
+        useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
