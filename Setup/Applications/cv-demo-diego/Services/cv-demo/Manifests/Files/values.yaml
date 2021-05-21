@@ -9,5 +9,5 @@ env:
 
   secret: {}
 
-namespace: ${env.name}
+namespace: cv-demo-${env.name}
 createNamespace: true
