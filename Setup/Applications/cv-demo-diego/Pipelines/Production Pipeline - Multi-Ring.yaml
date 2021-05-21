@@ -54,7 +54,7 @@ pipelineStages:
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: STAGE 3
+  stageName: QA - STAGE
   workflowName: Rollout with Tests
   workflowVariables:
   - entityType: ENVIRONMENT
