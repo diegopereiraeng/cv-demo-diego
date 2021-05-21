@@ -66,3 +66,17 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: stage
+- type: APPROVAL
+  name: Approval 4
+  parallel: false
+  properties:
+    userGroups:
+    - Slack-Notification-Demo
+    variables: null
+    stageName: STAGE 5
+    timeoutMillis: 86400000
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 5
