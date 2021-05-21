@@ -277,11 +277,20 @@ postDeploymentSteps:
 - type: SHELL_SCRIPT
   name: Slack Message
   properties:
+    commandPath: null
+    connectionAttributes: null
     executeOnDelegate: true
+    host: null
+    publishAsVar: false
+    sshKeyRef: null
+    sweepingOutputName: null
+    sweepingOutputScope: null
+    templateExpressions: null
     timeoutMillis: 600000
   templateUri: Harness SE/Diego/Slack Message:latest
   templateVariables:
   - name: Message
+    value: and them you can send  a message to a different group or just wait for or deployment notification.
 preDeploymentSteps:
 - type: SHELL_SCRIPT
   name: Slack Message
