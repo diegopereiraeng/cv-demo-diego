@@ -5,5 +5,5 @@ deploymentType: KUBERNETES
 infrastructure:
 - type: DIRECT_KUBERNETES
   cloudProviderName: Kubernetes Cluster Diego-GKE
-  namespace: ${service.name}-ring-1
+  namespace: ring-1
   releaseName: release-${infra.kubernetes.infraId}
