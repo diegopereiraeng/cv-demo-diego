@@ -136,6 +136,8 @@ pipelineStages:
     value: RING-1
   - name: metric_verification
     value: Prometheus
+  - name: notify_slack
+    value: 'no'
 - type: APPROVAL
   name: Approval 8
   parallel: false
