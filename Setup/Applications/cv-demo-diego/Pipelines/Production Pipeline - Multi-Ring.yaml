@@ -19,7 +19,7 @@ pipelineStages:
     name: InfraDefinition_KUBERNETES
     value: ${Infra-Dev}
 - type: ENV_STATE
-  name: Rollout with Tests
+  name: QA Test Deployment
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
