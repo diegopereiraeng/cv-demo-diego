@@ -40,6 +40,12 @@ phases:
   phaseSteps:
   - type: K8S_PHASE_STEP
     name: Deploy
+    stepSkipStrategies:
+    - assertionExpression: ${workflow.variables.notify_slack} == "no"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Slack Message
+      - Slack Notification Canary Deployed
     steps:
     - type: K8S_CANARY_DEPLOY
       name: Canary Deployment
