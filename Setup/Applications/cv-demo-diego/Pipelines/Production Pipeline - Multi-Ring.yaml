@@ -100,7 +100,7 @@ pipelineStages:
     value: ${Service}
   - entityType: INFRASTRUCTURE_DEFINITION
     name: INFRA
-    value: RING-0
+    value: ring-0
   - name: metric_verification
     value: Prometheus
   - name: notify_slack
@@ -130,7 +130,7 @@ pipelineStages:
   - name: verify_canary
     value: 'yes'
   - name: canary_configuration
-    value: error
+    value: good
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
@@ -139,7 +139,7 @@ pipelineStages:
     value: ${Service}
   - entityType: INFRASTRUCTURE_DEFINITION
     name: INFRA
-    value: RING-1
+    value: ring-1
   - name: metric_verification
     value: Prometheus
   - name: notify_slack
@@ -178,7 +178,7 @@ pipelineStages:
     value: ${Service}
   - entityType: INFRASTRUCTURE_DEFINITION
     name: INFRA
-    value: RING-2
+    value: ring-2
   - name: metric_verification
     value: Prometheus
   - name: notify_slack
