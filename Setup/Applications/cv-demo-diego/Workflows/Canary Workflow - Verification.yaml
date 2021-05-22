@@ -106,8 +106,14 @@ phases:
   - type: K8S_PHASE_STEP
     name: Load and Config
     stepSkipStrategies:
-    - assertionExpression: ${workflow.variables.verify_canary} == "no"
-      scope: ALL_STEPS
+    - assertionExpression: ${workflow.variables.canary_configuration} == "good"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Canary Error Configuration
+    - assertionExpression: ${workflow.variables.canary_configuration} == "error"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Canary Good Configuration
     steps:
     - type: HTTP
       name: Canary Good Configuration
