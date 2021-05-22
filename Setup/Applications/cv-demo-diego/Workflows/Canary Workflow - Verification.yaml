@@ -110,23 +110,23 @@ phases:
       scope: ALL_STEPS
     steps:
     - type: HTTP
-      name: Canary Good Configuration
+      name: Canary Error Configuration
       properties:
         assertion: ''
         body: |-
           {
               "running": true,
               "logConfig": {
-                  "logsPerMinute": 60,
-                  "errorRate": 5,
-                  "errorMessage": "KnownException"
+                  "logsPerMinute": 120,
+                  "errorRate": 50,
+                  "errorMessage": "BadThingHappenedException"
               },
               "metricConfig": {
-                  "callsPerMinute": 60,
-                  "errorRate": 5.0,
-                  "minErrorValue": 0.01,
-                  "maxErrorValue": 0.15,
-                  "shouldDoDelayedCalls": false
+                  "callsPerMinute": 100,
+                  "errorRate": 80.0,
+                  "minErrorValue": 0.3,
+                  "maxErrorValue": 1.0,
+                  "shouldDoDelayedCalls": true
               }
           }
         executeWithPreviousSteps: false
@@ -148,23 +148,23 @@ phases:
         url: http://34.121.70.58/canary/config
         useProxy: false
     - type: HTTP
-      name: Canary Error Configuration
+      name: Canary Good Configuration
       properties:
         assertion: ''
         body: |-
           {
               "running": true,
               "logConfig": {
-                  "logsPerMinute": 120,
-                  "errorRate": 50,
-                  "errorMessage": "BadThingHappenedException"
+                  "logsPerMinute": 60,
+                  "errorRate": 5,
+                  "errorMessage": "KnownException"
               },
               "metricConfig": {
-                  "callsPerMinute": 100,
-                  "errorRate": 80.0,
-                  "minErrorValue": 0.3,
-                  "maxErrorValue": 1.0,
-                  "shouldDoDelayedCalls": true
+                  "callsPerMinute": 60,
+                  "errorRate": 5.0,
+                  "minErrorValue": 0.01,
+                  "maxErrorValue": 0.15,
+                  "shouldDoDelayedCalls": false
               }
           }
         executeWithPreviousSteps: false
