@@ -35,20 +35,6 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: test
-- type: APPROVAL
-  name: Approval 2
-  parallel: false
-  properties:
-    userGroups:
-    - Slack-Notification-Demo
-    workflowVariables: null
-    stageName: STAGE APPROVAL
-    timeoutMillis: 86400000
-    approvalStateType: USER_GROUP
-    sweepingOutputName: ''
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: STAGE APPROVAL
 - type: ENV_STATE
   name: QA Stage Deployment
   parallel: false
@@ -67,7 +53,7 @@ pipelineStages:
     name: InfraDefinition_KUBERNETES
     value: stage
 - type: APPROVAL
-  name: Approval 4
+  name: Approval 3
   parallel: false
   properties:
     userGroups:
@@ -106,7 +92,7 @@ pipelineStages:
   - name: notify_slack
     value: 'yes'
 - type: APPROVAL
-  name: Approval 6
+  name: Approval 5
   parallel: false
   properties:
     userGroups:
@@ -145,7 +131,7 @@ pipelineStages:
   - name: notify_slack
     value: 'no'
 - type: APPROVAL
-  name: Approval 8
+  name: Approval 7
   parallel: false
   properties:
     userGroups:
