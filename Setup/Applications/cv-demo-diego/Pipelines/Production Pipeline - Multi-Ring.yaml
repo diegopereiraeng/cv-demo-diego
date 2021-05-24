@@ -116,7 +116,7 @@ pipelineStages:
   - name: verify_canary
     value: 'yes'
   - name: canary_configuration
-    value: good
+    value: error
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
