@@ -10,5 +10,5 @@ env:
 
   secret: {}
 
-namespace: cv-demo-${infra.name}
+namespace: ${infra.name}
 createNamespace: true
