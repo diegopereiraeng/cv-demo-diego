@@ -195,6 +195,10 @@ phases:
   - type: K8S_PHASE_STEP
     name: Verify
     stepSkipStrategies:
+    - assertionExpression: ${workflow.variables.canary_configuration} == "good" ||  ${workflow.variables.verify_canary} == "no"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Approval
     - assertionExpression: ${workflow.variables.notify_slack} == "no"
       scope: SPECIFIC_STEPS
       steps:
@@ -212,7 +216,6 @@ phases:
       steps:
       - Prometheus
       - ELK
-      - Approval
     steps:
     - type: PROMETHEUS
       name: Prometheus
