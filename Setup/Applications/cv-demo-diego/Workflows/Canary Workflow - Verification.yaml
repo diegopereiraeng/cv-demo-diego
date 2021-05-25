@@ -163,7 +163,7 @@ phases:
               "logConfig": {
                   "logsPerMinute": 150,
                   "errorRate": 90,
-                  "errorMessage": "BadThingHappenedException"
+                  "errorMessage": "BadThingHappenedException retrying to connect"
               },
               "metricConfig": {
                   "callsPerMinute": 200,
