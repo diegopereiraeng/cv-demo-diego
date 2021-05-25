@@ -161,14 +161,14 @@ phases:
           {
               "running": true,
               "logConfig": {
-                  "logsPerMinute": 120,
-                  "errorRate": 50,
+                  "logsPerMinute": 150,
+                  "errorRate": 90,
                   "errorMessage": "BadThingHappenedException"
               },
               "metricConfig": {
-                  "callsPerMinute": 100,
-                  "errorRate": 80.0,
-                  "minErrorValue": 0.3,
+                  "callsPerMinute": 200,
+                  "errorRate": 90.0,
+                  "minErrorValue": 0.7,
                   "maxErrorValue": 1.0,
                   "shouldDoDelayedCalls": true
               }
