@@ -156,7 +156,7 @@ phases:
     - type: HTTP
       name: Canary Error Configuration
       properties:
-        assertion: ${httpResponseCode}==200
+        assertion: ''
         body: |-
           {
               "running": true,
