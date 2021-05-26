@@ -42,6 +42,13 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: STAGE 1
   workflowName: elastic-search
+  workflowVariables:
+  - entityType: SERVICE
+    name: Service
+    value: elastic-search
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: ${Infra}
 - type: ENV_STATE
   name: cv-demo-ui
   parallel: true
