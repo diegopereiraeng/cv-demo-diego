@@ -30,31 +30,6 @@ pipelineStages:
     name: InfraDefinition_KUBERNETES
     value: gke
 - type: ENV_STATE
-  name: cv-demo
-  parallel: true
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: STAGE 1
-  workflowName: Canary Workflow - Verification
-  workflowVariables:
-  - name: verify_canary
-    value: 'no'
-  - name: canary_configuration
-    value: good
-  - entityType: ENVIRONMENT
-    name: Environment
-    value: prod
-  - entityType: SERVICE
-    name: Service
-    value: cv-demo
-  - entityType: INFRASTRUCTURE_DEFINITION
-    name: INFRA
-    value: gke
-  - name: metric_verification
-    value: Prometheus
-  - name: notify_slack
-    value: 'no'
-- type: ENV_STATE
   name: cv-demo-ui
   parallel: true
   skipCondition:
