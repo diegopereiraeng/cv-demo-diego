@@ -31,7 +31,7 @@ pipelineStages:
     value: qa
   - entityType: SERVICE
     name: Service
-    value: ${Service}
+    value: ${Service2}
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: test
