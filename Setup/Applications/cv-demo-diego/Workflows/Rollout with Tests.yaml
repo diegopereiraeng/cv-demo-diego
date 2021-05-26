@@ -50,6 +50,20 @@ phases:
         timeoutMillis: 10000
         url: http://34.121.70.58/
         useProxy: false
+    - type: PROMETHEUS
+      name: Prometheus
+      properties:
+        analysisServerConfigId: PHxpU5O3S9CkapFquK9Yqg
+        analysisTolerance: MEDIUM
+        comparisonStrategy: COMPARE_WITH_PREVIOUS
+        customThresholdRefId: 7c541482935349f3b714b41b1356927f
+        executeWithPreviousSteps: true
+        timeDuration: 5
+        timeSeriesToAnalyze:
+        - metricName: error_call
+          metricType: ERROR
+          txnName: custom
+          url: io_harness_custom_metric_error_call{kubernetes_pod_name="$hostName"}
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
