@@ -58,8 +58,15 @@ phases:
         comparisonStrategy: COMPARE_WITH_PREVIOUS
         customThresholdRefId: 7c541482935349f3b714b41b1356927f
         executeWithPreviousSteps: true
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeDuration: 5
         timeSeriesToAnalyze:
+        - metricName: normal_call
+          metricType: THROUGHPUT
+          txnName: custom
+          url: io_harness_custom_metric_normal_call{kubernetes_pod_name="$hostName"}
         - metricName: error_call
           metricType: ERROR
           txnName: custom
