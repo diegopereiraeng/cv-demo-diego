@@ -6,7 +6,7 @@ pipelineStages:
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: DEV
+  stageName: QA - TEST
   workflowName: Simple Rollout
   workflowVariables:
   - entityType: ENVIRONMENT
@@ -20,7 +20,7 @@ pipelineStages:
     value: ${Infra-Dev}
 - type: ENV_STATE
   name: QA Test Deployment
-  parallel: false
+  parallel: true
   skipCondition:
     type: DO_NOT_SKIP
   stageName: QA - TEST
