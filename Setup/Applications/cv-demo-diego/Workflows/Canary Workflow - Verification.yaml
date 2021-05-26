@@ -285,7 +285,7 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
-        timeoutMillis: 3600000
+        timeoutMillis: 604800000
         userGroups:
         - xsUUKuxzQ8upFNUpt7wBYQ
         - u-mGHdFRQA-NJj_KMnhTFQ
