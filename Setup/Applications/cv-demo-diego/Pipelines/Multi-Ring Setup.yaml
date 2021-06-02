@@ -86,20 +86,6 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: ring-1
-- type: APPROVAL
-  name: Approval 5
-  parallel: false
-  properties:
-    userGroups:
-    - Slack-Notification-Demo
-    workflowVariables: null
-    stageName: RING 2 - APPROVAL
-    timeoutMillis: 1209600000
-    approvalStateType: USER_GROUP
-    sweepingOutputName: ''
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: RING 2 - APPROVAL
 - type: ENV_STATE
   name: Ring 2 Canary Workflow - Verification
   parallel: false
