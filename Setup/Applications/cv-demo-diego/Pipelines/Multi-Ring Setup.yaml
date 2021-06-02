@@ -24,7 +24,7 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: QA - TEST
-  workflowName: Rollout with Tests
+  workflowName: Simple Rollout
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
