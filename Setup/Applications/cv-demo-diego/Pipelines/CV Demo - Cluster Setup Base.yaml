@@ -49,10 +49,3 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: ${Infra}
-- type: ENV_STATE
-  name: cv-demo-ui
-  parallel: true
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: STAGE 1
-  workflowName: cv-demo-ui
