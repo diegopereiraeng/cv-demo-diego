@@ -32,7 +32,7 @@ phases:
   - type: K8S_PHASE_STEP
     name: Verify
     stepSkipStrategies:
-    - assertionExpression: ${workflow.variables.verify_prometheus} == "no"
+    - assertionExpression: ${workflow.variables.varify_prometheus} == "no"
       scope: SPECIFIC_STEPS
       steps:
       - Prometheus
