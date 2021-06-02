@@ -54,6 +54,8 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: stage
+  - name: varify_prometheus
+    value: 'yes'
 - type: APPROVAL
   name: Approval 3
   parallel: false
