@@ -170,3 +170,9 @@ userVariables:
   fixed: false
   mandatory: true
   name: InfraDefinition_KUBERNETES
+- type: TEXT
+  allowedValues: yes,no
+  fixed: false
+  mandatory: true
+  name: varify_prometheus
+  value: 'no'
