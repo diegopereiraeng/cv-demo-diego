@@ -35,6 +35,8 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: test
+  - name: varify_prometheus
+    value: 'no'
 - type: ENV_STATE
   name: QA Stage Deployment
   parallel: false
