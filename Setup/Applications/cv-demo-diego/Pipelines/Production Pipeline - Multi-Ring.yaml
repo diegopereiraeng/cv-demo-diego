@@ -14,7 +14,7 @@ pipelineStages:
     value: dev
   - entityType: SERVICE
     name: Service
-    value: ${Service},${Service2}
+    value: ${Service}
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: ${Infra-Dev}
