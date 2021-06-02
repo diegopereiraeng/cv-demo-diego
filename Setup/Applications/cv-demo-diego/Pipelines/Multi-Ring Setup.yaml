@@ -1,0 +1,171 @@
+harnessApiVersion: '1.0'
+type: PIPELINE
+pipelineStages:
+- type: ENV_STATE
+  name: Dev Deployment
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: QA - TEST
+  workflowName: Simple Rollout
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: dev
+  - entityType: SERVICE
+    name: Service
+    value: ${Service}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: ${Infra-Dev}
+- type: ENV_STATE
+  name: QA Test Deployment
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: QA - TEST
+  workflowName: Rollout with Tests
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: qa
+  - entityType: SERVICE
+    name: Service
+    value: ${Service2}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: test
+- type: ENV_STATE
+  name: QA Stage Deployment
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: QA - STAGE
+  workflowName: Rollout with Tests
+  workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: qa
+  - entityType: SERVICE
+    name: Service
+    value: ${Service}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: InfraDefinition_KUBERNETES
+    value: stage
+- type: APPROVAL
+  name: Approval 3
+  parallel: false
+  properties:
+    userGroups:
+    - Slack-Notification-Demo
+    workflowVariables: null
+    stageName: PROD - RING 0 - APPROVAL
+    timeoutMillis: 86400000
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: PROD - RING 0 - APPROVAL
+- type: ENV_STATE
+  name: PROD - RING 0 - Canary Workflow - Verification
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: RING 0
+  workflowName: Canary Workflow - Verification
+  workflowVariables:
+  - name: verify_canary
+    value: 'yes'
+  - name: canary_configuration
+    value: good
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: prod
+  - entityType: SERVICE
+    name: Service
+    value: ${Service}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: INFRA
+    value: ring-0
+  - name: metric_verification
+    value: Prometheus
+  - name: notify_slack
+    value: 'yes'
+- type: APPROVAL
+  name: Approval 5
+  parallel: false
+  properties:
+    userGroups:
+    - Slack-Notification-Demo
+    workflowVariables: null
+    stageName: RING 1 - APPROVAL
+    timeoutMillis: 1209600000
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: RING 1 - APPROVAL
+- type: ENV_STATE
+  name: Canary Workflow - Verification
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: RING 1
+  workflowName: Canary Workflow - Verification
+  workflowVariables:
+  - name: verify_canary
+    value: 'yes'
+  - name: canary_configuration
+    value: error
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: prod
+  - entityType: SERVICE
+    name: Service
+    value: ${Service}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: INFRA
+    value: gke
+  - name: metric_verification
+    value: Prometheus
+  - name: notify_slack
+    value: 'no'
+- type: APPROVAL
+  name: Approval 7
+  parallel: false
+  properties:
+    userGroups:
+    - Slack-Notification-Demo
+    workflowVariables: null
+    stageName: RING 2 - APPROVAL
+    timeoutMillis: 1209600000
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: RING 2 - APPROVAL
+- type: ENV_STATE
+  name: Ring 2 Canary Workflow - Verification
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: RING 2
+  workflowName: Canary Workflow - Verification
+  workflowVariables:
+  - name: verify_canary
+    value: 'yes'
+  - name: canary_configuration
+    value: error
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: prod
+  - entityType: SERVICE
+    name: Service
+    value: ${Service}
+  - entityType: INFRASTRUCTURE_DEFINITION
+    name: INFRA
+    value: ring-2
+  - name: metric_verification
+    value: Prometheus
+  - name: notify_slack
+    value: 'no'
