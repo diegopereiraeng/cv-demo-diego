@@ -72,12 +72,8 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: RING 0
-  workflowName: Canary Workflow - Verification
+  workflowName: Simple Rollout
   workflowVariables:
-  - name: verify_canary
-    value: 'yes'
-  - name: canary_configuration
-    value: good
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
@@ -85,12 +81,8 @@ pipelineStages:
     name: Service
     value: ${Service}
   - entityType: INFRASTRUCTURE_DEFINITION
-    name: INFRA
+    name: InfraDefinition_KUBERNETES
     value: ring-0
-  - name: metric_verification
-    value: Prometheus
-  - name: notify_slack
-    value: 'yes'
 - type: APPROVAL
   name: Approval 5
   parallel: false
