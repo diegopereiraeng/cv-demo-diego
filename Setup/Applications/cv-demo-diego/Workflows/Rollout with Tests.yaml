@@ -31,6 +31,11 @@ phases:
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
+    stepSkipStrategies:
+    - assertionExpression: ${workflow.variables.verify_prometheus} == "no"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Prometheus
     steps:
     - type: HTTP
       name: HTTP Check
