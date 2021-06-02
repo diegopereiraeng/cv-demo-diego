@@ -199,7 +199,7 @@ phases:
       scope: SPECIFIC_STEPS
       steps:
       - Approval
-    - assertionExpression: ${workflow.variables.notify_slack} == "no"
+    - assertionExpression: ${workflow.variables.notify_slack} == "no" || ${workflow.variables.notify_slack} == "yes"
       scope: SPECIFIC_STEPS
       steps:
       - Slack Notification Verification Completed
