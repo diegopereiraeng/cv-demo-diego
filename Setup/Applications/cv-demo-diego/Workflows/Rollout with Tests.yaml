@@ -38,7 +38,7 @@ phases:
       - Prometheus
     steps:
     - type: HTTP
-      name: HTTP Check
+      name: Load Test
       properties:
         assertion: ${httpResponseCode}==200
         body: ''
