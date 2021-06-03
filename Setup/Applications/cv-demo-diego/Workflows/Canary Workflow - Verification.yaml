@@ -195,10 +195,6 @@ phases:
   - type: K8S_PHASE_STEP
     name: Verify
     stepSkipStrategies:
-    - assertionExpression: ${workflow.variables.canary_configuration} == "good" ||  ${workflow.variables.verify_canary} == "no"
-      scope: SPECIFIC_STEPS
-      steps:
-      - Approval
     - assertionExpression: ${workflow.variables.notify_slack} == "no" || ${workflow.variables.notify_slack} == "yes"
       scope: SPECIFIC_STEPS
       steps:
@@ -278,17 +274,6 @@ phases:
         executeWithPreviousSteps: true
         includePreviousPhaseNodes: false
         timeDuration: '10'
-    - type: APPROVAL
-      name: Approval
-      properties:
-        approvalStateType: USER_GROUP
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 604800000
-        userGroups:
-        - xsUUKuxzQ8upFNUpt7wBYQ
-        - u-mGHdFRQA-NJj_KMnhTFQ
     - type: SHELL_SCRIPT
       name: Slack Notification Verification Completed
       properties:
