@@ -347,19 +347,7 @@ phases:
   phaseSteps:
   - type: K8S_PHASE_STEP
     name: Deploy
-    stepSkipStrategies:
-    - assertionExpression: ${env.name} == 'dev'
-      scope: SPECIFIC_STEPS
-      steps:
-      - Slack Approval
     steps:
-    - type: APPROVAL
-      name: Slack Approval
-      properties:
-        approvalStateType: USER_GROUP
-        timeoutMillis: 86400000
-        userGroups:
-        - V04HA3qrSleRPFexdrm6lw
     - type: K8S_DEPLOYMENT_ROLLING
       name: Rollout Deployment
     stepsInParallel: false
