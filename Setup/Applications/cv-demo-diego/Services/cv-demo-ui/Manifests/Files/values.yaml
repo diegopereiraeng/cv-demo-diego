@@ -2,7 +2,7 @@ name: cv-demo-ui
 image: ${artifact.metadata.image}
 replicas: 1
 
-namespace: cv-demo-ui-${infra.name}
+namespace: ${infra.kubernetes.namespace}
 createNamespace: true
 
 env:
