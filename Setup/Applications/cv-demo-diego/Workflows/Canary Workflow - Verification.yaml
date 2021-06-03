@@ -171,7 +171,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 10000
-        url: http://${service.name}-ui.${infra.kubernetes.namespace}.svc.cluster.local:8080/canary/config
+        url: http://${service.name}-ui.${infra.kubernetes.namespace}.svc.cluster.local:80/canary/config
         useProxy: false
     stepsInParallel: false
   - type: K8S_PHASE_STEP
