@@ -10,5 +10,5 @@ env:
 
   secret: {}
 
-namespace: ${infra.name}
+namespace: ${infra.kubernetes.namespace}
 createNamespace: true
