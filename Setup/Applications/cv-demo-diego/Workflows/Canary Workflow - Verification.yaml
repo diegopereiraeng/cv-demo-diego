@@ -133,7 +133,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 10000
-        url: http://${service.name}.${infra.kubernetes.namespace}.svc.cluster.local:8080/canary/config
+        url: http://${service.name}-canary.${infra.kubernetes.namespace}.svc.cluster.local:8080/canary/config
         useProxy: false
     - type: HTTP
       name: Canary Error Configuration
