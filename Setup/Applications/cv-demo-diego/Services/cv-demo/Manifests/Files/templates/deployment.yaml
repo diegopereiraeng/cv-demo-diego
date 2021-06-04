@@ -42,7 +42,7 @@ spec:
         resources:
           requests:
             cpu: 150m
-            memory: 100Mi
+            memory: 256Mi
         readinessProbe:
           httpGet:
             path: /config
