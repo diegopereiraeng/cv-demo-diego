@@ -67,7 +67,7 @@ pipelineStages:
     name: InfraDefinition_KUBERNETES
     value: ring-0
 - type: ENV_STATE
-  name: Simple Rollout-1
+  name: cv-demo
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
