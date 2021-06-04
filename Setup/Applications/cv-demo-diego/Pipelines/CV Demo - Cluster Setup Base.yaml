@@ -11,13 +11,13 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: prod
+    value: cv-demo
   - entityType: SERVICE
     name: Service
     value: nginx-ingress-controller
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ring-3
+    value: cv-demo
 - type: ENV_STATE
   name: prometheus
   parallel: true
