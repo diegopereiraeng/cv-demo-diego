@@ -82,4 +82,4 @@ pipelineStages:
     value: cv-demo
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ring-0
+    value: ${Infra}
