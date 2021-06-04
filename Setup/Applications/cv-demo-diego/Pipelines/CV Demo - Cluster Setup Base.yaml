@@ -50,7 +50,7 @@ pipelineStages:
     name: InfraDefinition_KUBERNETES
     value: ${Infra}
 - type: ENV_STATE
-  name: Simple Rollout
+  name: cv-demo-ui
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
