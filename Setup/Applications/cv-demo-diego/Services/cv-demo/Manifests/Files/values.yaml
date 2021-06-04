@@ -1,12 +1,11 @@
-name: cv-demo-diego
+name: cv-demo
 image: ${artifact.metadata.image}
 
 env:
   config:
     # ELK Settings
-    #ELK_URL: http://elasticsearch-loadbalancer/
-    ELK_URL: http://35.222.26.80/
-    ELK_INDEX: cv-demo-diego
+    ELK_URL: http://elasticsearch-loadbalancer/
+    ELK_INDEX: cv-demo
 
   secret: {}
 
