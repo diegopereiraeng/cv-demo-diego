@@ -27,7 +27,7 @@ phases:
     name: Deploy
     stepsInParallel: false
   - type: K8S_PHASE_STEP
-    name: Verify
+    name: Delete
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
