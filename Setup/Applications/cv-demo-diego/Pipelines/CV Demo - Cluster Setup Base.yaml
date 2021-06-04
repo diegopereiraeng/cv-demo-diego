@@ -41,8 +41,11 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 1
-  workflowName: elastic-search
+  workflowName: Simple Rollout
   workflowVariables:
+  - entityType: ENVIRONMENT
+    name: Environment
+    value: prod
   - entityType: SERVICE
     name: Service
     value: elastic-search
