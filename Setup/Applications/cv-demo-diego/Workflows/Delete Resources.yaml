@@ -24,9 +24,6 @@ phases:
   name: Rolling
   phaseSteps:
   - type: K8S_PHASE_STEP
-    name: Deploy
-    stepsInParallel: false
-  - type: K8S_PHASE_STEP
     name: Delete
     steps:
     - type: K8S_DELETE
