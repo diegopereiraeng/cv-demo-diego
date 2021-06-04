@@ -1,39 +1,35 @@
 #
-# Ingress targeting canary only, at /canary/*
+# Service targeting canary only
 #
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
+apiVersion: v1
+kind: Service
 metadata:
   name: {{.Values.name}}-canary
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
-  rules:
-  - http:
-      paths:
-      - path: /canary/(.*)
-        backend:
-          serviceName: {{.Values.name}}-canary
-          servicePort: http-canary
+  type: ClusterIP
+  ports:
+  - name: http-canary
+    port: 8080
+    targetPort: http
+    protocol: TCP
+  selector:
+    app: {{.Values.name}}
+    harness.io/track: canary
 ---
 #
-# Ingress targeting stable only, at /api/*
+# Service targeting stable only
 #
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
+apiVersion: v1
+kind: Service
 metadata:
   name: {{.Values.name}}-stable
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
-  rules:
-  - http:
-      paths:
-      - path: /api/(.*)
-        backend:
-          serviceName: {{.Values.name}}-stable
-          servicePort: http-stable
+  type: ClusterIP
+  ports:
+  - name: http-stable
+    port: 8080
+    targetPort: http
+    protocol: TCP
+  selector:
+    app: {{.Values.name}}
+    harness.io/track: stable
