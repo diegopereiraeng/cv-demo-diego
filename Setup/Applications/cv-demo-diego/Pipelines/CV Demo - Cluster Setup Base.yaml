@@ -45,13 +45,13 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: cv-demo-2
+    value: cv-demo
   - entityType: SERVICE
     name: Service
     value: elastic-search
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: cv-demo
+    value: ring0
 - type: ENV_STATE
   name: cv-demo-ui
   parallel: false
