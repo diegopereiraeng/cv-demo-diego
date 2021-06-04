@@ -34,7 +34,7 @@ pipelineStages:
     value: prometheus
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ${Infra}
+    value: tools
 - type: ENV_STATE
   name: elastic-search
   parallel: true
