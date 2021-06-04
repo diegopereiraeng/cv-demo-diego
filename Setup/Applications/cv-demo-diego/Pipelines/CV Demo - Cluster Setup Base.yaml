@@ -48,7 +48,7 @@ pipelineStages:
     value: elastic-search
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ${Infra}
+    value: tools
 - type: ENV_STATE
   name: cv-demo-ui
   parallel: false
