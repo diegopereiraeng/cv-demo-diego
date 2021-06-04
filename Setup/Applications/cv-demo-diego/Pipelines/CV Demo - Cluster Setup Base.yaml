@@ -62,13 +62,13 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: cv-demo-2
+    value: cv-demo
   - entityType: SERVICE
     name: Service
     value: cv-demo-ui
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ${Infra}
+    value: ring0
 - type: ENV_STATE
   name: cv-demo
   parallel: false
