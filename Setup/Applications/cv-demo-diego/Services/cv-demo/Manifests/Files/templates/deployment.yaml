@@ -41,7 +41,7 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            cpu: 500m
+            cpu: 300m
             memory: 50Mi
         readinessProbe:
           httpGet:
@@ -53,7 +53,7 @@ spec:
           failureThreshold: 2
         ports:
         - name: http
-          containerPort: 8080
+          containerPort: 80
           protocol: TCP
         {{- if or .Values.env.config .Values.env.secret}}
         envFrom:
