@@ -65,7 +65,7 @@ pipelineStages:
     value: cv-demo-ui
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ring-0
+    value: ${Infra}
 - type: ENV_STATE
   name: cv-demo
   parallel: false
