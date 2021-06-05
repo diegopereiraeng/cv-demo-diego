@@ -96,7 +96,7 @@ phases:
     - assertionExpression: ${workflow.variables.canary_configuration} == "good" || ${workflow.variables.canary_configuration} == "error"
       scope: SPECIFIC_STEPS
       steps:
-      - Error Config
+      - Good Config
     steps:
     - type: HTTP
       name: Canary Good Configuration
@@ -175,7 +175,7 @@ phases:
         url: http://${service.name}-ui.${infra.kubernetes.namespace}.svc.cluster.local:80/canary/config
         useProxy: false
     - type: SHELL_SCRIPT
-      name: Error Config
+      name: Good Config
       properties:
         commandPath: null
         connectionAttributes: null
@@ -191,21 +191,21 @@ phases:
       templateUri: Harness SE/Diego/Run Pod CV-DEMO Command:latest
       templateVariables:
       - name: logsPerMinute
-        value: '300'
+        value: '500'
       - name: logErrorRate
-        value: '60'
+        value: '0'
       - name: logErrorMessage
-        value: DiegoException
+        value: KnownException
       - name: callsPerMinute
         value: '200'
       - name: errorRate
-        value: '9.0'
+        value: '0.1'
       - name: minErrorValue
-        value: '0.15'
+        value: '0.01'
       - name: maxErrorValue
-        value: '0.55'
+        value: '0.1'
       - name: shouldDoDelayedCalls
-        value: 'true'
+        value: 'false'
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
