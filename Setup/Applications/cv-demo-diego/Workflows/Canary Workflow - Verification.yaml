@@ -623,7 +623,7 @@ userVariables:
   name: notify_slack
   value: 'no'
 - type: TEXT
-  allowedValues: good,error
+  allowedValues: good,error,load
   fixed: false
   mandatory: true
   name: canary_configuration
