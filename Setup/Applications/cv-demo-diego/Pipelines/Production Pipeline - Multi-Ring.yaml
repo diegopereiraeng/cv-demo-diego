@@ -90,7 +90,7 @@ pipelineStages:
     value: ${Service}
   - entityType: INFRASTRUCTURE_DEFINITION
     name: INFRA
-    value: gke
+    value: ring-0
   - name: metric_verification
     value: Prometheus
   - name: notify_slack
