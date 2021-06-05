@@ -133,7 +133,7 @@ pipelineStages:
   - name: metric_verification
     value: Prometheus
   - name: notify_slack
-    value: 'no'
+    value: 'yes'
 - type: APPROVAL
   name: Approval 7
   parallel: false
