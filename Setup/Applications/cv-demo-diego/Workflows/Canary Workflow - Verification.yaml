@@ -227,26 +227,6 @@ phases:
       - Prometheus
       - ELK
     steps:
-    - type: PROMETHEUS
-      name: Prometheus
-      properties:
-        analysisServerConfigId: PHxpU5O3S9CkapFquK9Yqg
-        analysisTolerance: LOW
-        comparisonStrategy: COMPARE_WITH_CURRENT
-        customThresholdRefId: 0034526e5f2a4a3ea97011a559dda999
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeDuration: 5
-        timeSeriesToAnalyze:
-        - metricName: normal_call
-          metricType: THROUGHPUT
-          txnName: custom
-          url: io_harness_custom_metric_normal_call{kubernetes_pod_name="$hostName"}
-        - metricName: error_call
-          metricType: ERROR
-          txnName: custom
-          url: io_harness_custom_metric_error_call{kubernetes_pod_name="$hostName"}
     - type: SHELL_SCRIPT
       name: Load Test
       properties:
@@ -279,6 +259,26 @@ phases:
         value: '0.15'
       - name: shouldDoDelayedCalls
         value: 'false'
+    - type: PROMETHEUS
+      name: Prometheus
+      properties:
+        analysisServerConfigId: PHxpU5O3S9CkapFquK9Yqg
+        analysisTolerance: LOW
+        comparisonStrategy: COMPARE_WITH_CURRENT
+        customThresholdRefId: 0034526e5f2a4a3ea97011a559dda999
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeDuration: 5
+        timeSeriesToAnalyze:
+        - metricName: normal_call
+          metricType: THROUGHPUT
+          txnName: custom
+          url: io_harness_custom_metric_normal_call{kubernetes_pod_name="$hostName"}
+        - metricName: error_call
+          metricType: ERROR
+          txnName: custom
+          url: io_harness_custom_metric_error_call{kubernetes_pod_name="$hostName"}
     - type: ELK
       name: ELK
       properties:
