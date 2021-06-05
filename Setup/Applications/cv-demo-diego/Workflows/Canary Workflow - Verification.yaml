@@ -266,6 +266,7 @@ phases:
         analysisTolerance: LOW
         comparisonStrategy: COMPARE_WITH_CURRENT
         customThresholdRefId: 0034526e5f2a4a3ea97011a559dda999
+        executeWithPreviousSteps: true
         templateUuid: null
         templateVariables: null
         templateVersion: null
