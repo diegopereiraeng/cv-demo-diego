@@ -37,47 +37,6 @@ phases:
     steps:
     - type: K8S_DEPLOYMENT_ROLLING
       name: Rollout Deployment
-    - type: SHELL_SCRIPT
-      name: Shell Script
-      properties:
-        commandPath: null
-        connectionAttributes: null
-        executeOnDelegate: true
-        host: null
-        includeInfraSelectors: true
-        outputVars: ''
-        publishAsVar: false
-        scriptString: |-
-          kubectl -n cv-demo exec -it ${host.hostName} -- /bin/bash -s <<EOF
-          #!/bin/bash
-          curl --location --request POST 'http://localhost:8080/config' \
-          --header 'Accept: application/json' \
-          --header 'Content-Type: application/json' \
-          --data-raw '{
-              "running": true,
-              "logConfig": {
-                  "logsPerMinute": 60,
-                  "errorRate": 5,
-                  "errorMessage": "KnownException"
-              },
-              "metricConfig": {
-                  "callsPerMinute": 60,
-                  "errorRate": 5.0,
-                  "minErrorValue": 0.01,
-                  "maxErrorValue": 0.15,
-                  "shouldDoDelayedCalls": false
-              }
-          }' > /tmp/results
-          EOF
-
-          kubectl -n cv-demo exec -it ${host.hostName} -- cat /tmp/results
-        scriptType: BASH
-        sshKeyRef: null
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        templateExpressions: null
-        templateVariables: ''
-        timeoutMillis: 60000
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
