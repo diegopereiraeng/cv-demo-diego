@@ -263,20 +263,6 @@ phases:
         timeDuration: 5
         timestampField: '@timestamp'
         timestampFormat: yyyy-MM-dd'T'HH:mm:ss.SSSX
-    - type: APP_DYNAMICS
-      name: AppDynamics
-      properties:
-        analysisServerConfigId: UeL6VqdfToGq1YcMW143Rw
-        analysisTolerance: LOW
-        applicationId: '97289'
-        comparisonStrategy: COMPARE_WITH_CURRENT
-        executeWithPreviousSteps: true
-        hostnameTemplate: ${host.hostName}
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        tierId: '544140'
-        timeDuration: '10'
     - type: SHELL_SCRIPT
       name: Load Test
       properties:
@@ -309,6 +295,20 @@ phases:
         value: '0.15'
       - name: shouldDoDelayedCalls
         value: 'false'
+    - type: APP_DYNAMICS
+      name: AppDynamics
+      properties:
+        analysisServerConfigId: UeL6VqdfToGq1YcMW143Rw
+        analysisTolerance: LOW
+        applicationId: '97289'
+        comparisonStrategy: COMPARE_WITH_CURRENT
+        executeWithPreviousSteps: true
+        hostnameTemplate: ${host.hostName}
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        tierId: '544140'
+        timeDuration: '10'
     - type: NEW_RELIC
       name: New Relic
       properties:
