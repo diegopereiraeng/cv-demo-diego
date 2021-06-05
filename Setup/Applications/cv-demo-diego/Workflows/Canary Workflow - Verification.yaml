@@ -210,6 +210,10 @@ phases:
   - type: K8S_PHASE_STEP
     name: Verify
     stepSkipStrategies:
+    - assertionExpression: ${workflow.variables.canary_configuration} == "good" || ${workflow.variables.canary_configuration} == "error"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Load Test
     - assertionExpression: ${workflow.variables.notify_slack} == "no" || ${workflow.variables.notify_slack} == "yes"
       scope: SPECIFIC_STEPS
       steps:
