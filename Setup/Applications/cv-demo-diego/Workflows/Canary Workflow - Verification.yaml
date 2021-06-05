@@ -93,7 +93,7 @@ phases:
       steps:
       - Canary Good Configuration
       - Canary Error Configuration
-    - assertionExpression: ${workflow.variables.canary_configuration} == "good" || ${workflow.variables.canary_configuration} == "error"
+    - assertionExpression: ${workflow.variables.canary_configuration} == "good" || ${workflow.variables.canary_configuration} == "error" ||  ${workflow.variables.canary_configuration} == "load"
       scope: SPECIFIC_STEPS
       steps:
       - Error Config
