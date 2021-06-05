@@ -263,31 +263,6 @@ phases:
         timeDuration: 5
         timestampField: '@timestamp'
         timestampFormat: yyyy-MM-dd'T'HH:mm:ss.SSSX
-    - type: APP_DYNAMICS
-      name: AppDynamics
-      properties:
-        analysisServerConfigId: UeL6VqdfToGq1YcMW143Rw
-        analysisTolerance: LOW
-        applicationId: '97289'
-        comparisonStrategy: COMPARE_WITH_CURRENT
-        executeWithPreviousSteps: true
-        hostnameTemplate: ${host.hostName}
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        tierId: '544140'
-        timeDuration: '10'
-    - type: NEW_RELIC
-      name: New Relic
-      properties:
-        analysisServerConfigId: iYU27hjeQ4u-8Y6xr3CF_g
-        analysisTolerance: LOW
-        applicationId: '621819515'
-        comparisonStrategy: COMPARE_WITH_CURRENT
-        customThresholdRefId: 2f0391c47265474aac8dd39c9a49f096
-        executeWithPreviousSteps: true
-        includePreviousPhaseNodes: false
-        timeDuration: '10'
     - type: SHELL_SCRIPT
       name: Load Test
       properties:
@@ -320,6 +295,31 @@ phases:
         value: '0.15'
       - name: shouldDoDelayedCalls
         value: 'false'
+    - type: APP_DYNAMICS
+      name: AppDynamics
+      properties:
+        analysisServerConfigId: UeL6VqdfToGq1YcMW143Rw
+        analysisTolerance: LOW
+        applicationId: '97289'
+        comparisonStrategy: COMPARE_WITH_CURRENT
+        executeWithPreviousSteps: true
+        hostnameTemplate: ${host.hostName}
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        tierId: '544140'
+        timeDuration: '10'
+    - type: NEW_RELIC
+      name: New Relic
+      properties:
+        analysisServerConfigId: iYU27hjeQ4u-8Y6xr3CF_g
+        analysisTolerance: LOW
+        applicationId: '621819515'
+        comparisonStrategy: COMPARE_WITH_CURRENT
+        customThresholdRefId: 2f0391c47265474aac8dd39c9a49f096
+        executeWithPreviousSteps: true
+        includePreviousPhaseNodes: false
+        timeDuration: '10'
     - type: SHELL_SCRIPT
       name: Slack Notification Verification Completed
       properties:
