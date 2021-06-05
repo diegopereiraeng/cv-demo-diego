@@ -5,5 +5,5 @@ deploymentType: KUBERNETES
 infrastructure:
 - type: DIRECT_KUBERNETES
   cloudProviderName: K8S Diego GKE
-  namespace: cv-demo
+  namespace: ring0
   releaseName: release-${infra.kubernetes.infraId}
