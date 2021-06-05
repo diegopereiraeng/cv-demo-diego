@@ -174,7 +174,7 @@ phases:
         url: http://${service.name}-ui.${infra.kubernetes.namespace}.svc.cluster.local:80/canary/config
         useProxy: false
     - type: SHELL_SCRIPT
-      name: Run Pod CV-DEMO Command
+      name: Error Config
       properties:
         commandPath: null
         connectionAttributes: null
