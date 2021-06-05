@@ -321,6 +321,29 @@ phases:
         value: primary
       - name: Title
         value: Verification Completed with Success - Waiting for Approval
+    - type: SHELL_SCRIPT
+      name: Load Test
+      properties:
+        executeOnDelegate: true
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Load Test:latest
+      templateVariables:
+      - name: logsPerMinute
+        value: '60'
+      - name: logErrorRate
+        value: '5'
+      - name: logErrorMessage
+        value: KnownException
+      - name: callsPerMinute
+        value: '60'
+      - name: errorRate
+        value: '1.0'
+      - name: minErrorValue
+        value: '0.01'
+      - name: maxErrorValue
+        value: '0.15'
+      - name: shouldDoDelayedCalls
+        value: 'false'
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
