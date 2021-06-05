@@ -324,7 +324,16 @@ phases:
     - type: SHELL_SCRIPT
       name: Load Test
       properties:
+        commandPath: null
+        connectionAttributes: null
         executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
         timeoutMillis: 600000
       templateUri: Harness SE/Diego/Load Test:latest
       templateVariables:
