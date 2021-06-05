@@ -227,38 +227,6 @@ phases:
       - Prometheus
       - ELK
     steps:
-    - type: SHELL_SCRIPT
-      name: Load Test
-      properties:
-        commandPath: null
-        connectionAttributes: null
-        executeOnDelegate: true
-        host: null
-        includeInfraSelectors: true
-        publishAsVar: false
-        sshKeyRef: null
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        templateExpressions: null
-        timeoutMillis: 600000
-      templateUri: Harness SE/Diego/Load Test:latest
-      templateVariables:
-      - name: logsPerMinute
-        value: '60'
-      - name: logErrorRate
-        value: '5'
-      - name: logErrorMessage
-        value: KnownException
-      - name: callsPerMinute
-        value: '60'
-      - name: errorRate
-        value: '1.0'
-      - name: minErrorValue
-        value: '0.01'
-      - name: maxErrorValue
-        value: '0.15'
-      - name: shouldDoDelayedCalls
-        value: 'false'
     - type: PROMETHEUS
       name: Prometheus
       properties:
@@ -266,7 +234,6 @@ phases:
         analysisTolerance: LOW
         comparisonStrategy: COMPARE_WITH_CURRENT
         customThresholdRefId: 0034526e5f2a4a3ea97011a559dda999
-        executeWithPreviousSteps: true
         templateUuid: null
         templateVariables: null
         templateVersion: null
@@ -310,6 +277,38 @@ phases:
         templateVersion: null
         tierId: '544140'
         timeDuration: '10'
+    - type: SHELL_SCRIPT
+      name: Load Test
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Load Test:latest
+      templateVariables:
+      - name: logsPerMinute
+        value: '60'
+      - name: logErrorRate
+        value: '5'
+      - name: logErrorMessage
+        value: KnownException
+      - name: callsPerMinute
+        value: '60'
+      - name: errorRate
+        value: '1.0'
+      - name: minErrorValue
+        value: '0.01'
+      - name: maxErrorValue
+        value: '0.15'
+      - name: shouldDoDelayedCalls
+        value: 'false'
     - type: NEW_RELIC
       name: New Relic
       properties:
