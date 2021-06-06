@@ -201,7 +201,7 @@ phases:
         sweepingOutputScope: null
         templateExpressions: null
         timeoutMillis: 600000
-      templateUri: Harness SE/Diego/Run Pod CV-DEMO Command:latest
+      templateUri: Harness SE/Diego/Canary Instance Config Setup:latest
       templateVariables:
       - name: logsPerMinute
         value: '60'
@@ -233,7 +233,7 @@ phases:
         sweepingOutputScope: null
         templateExpressions: null
         timeoutMillis: 600000
-      templateUri: Harness SE/Diego/Run Pod CV-DEMO Command:latest
+      templateUri: Harness SE/Diego/Canary Instance Config Setup:latest
       templateVariables:
       - name: logsPerMinute
         value: '300'
@@ -251,6 +251,28 @@ phases:
         value: '0.55'
       - name: shouldDoDelayedCalls
         value: 'true'
+    - type: SHELL_SCRIPT
+      name: Stable Instance Config Setup
+      properties:
+        executeOnDelegate: true
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Stable Instance Config Setup:latest
+      templateVariables:
+      - name: logsPerMinute
+        value: '100'
+      - name: logErrorRate
+        value: '20'
+      - name: logErrorMessage
+        value: KnownException
+      - name: callsPerMinute
+        value: '100'
+      - name: errorRate
+        value: '10'
+      - name: minErrorValue
+        value: '0.01'
+      - name: maxErrorValue
+        value: '0.15'
+      - name: shouldDoDelayedCalls
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
