@@ -160,16 +160,16 @@ phases:
       name: ELK
       properties:
         analysisServerConfigId: o6RSJjxiQDOSf4clb1XWUQ
-        comparisonStrategy: COMPARE_WITH_CURRENT
+        comparisonStrategy: COMPARE_WITH_PREVIOUS
         executeWithPreviousSteps: true
         hostnameField: hostname
-        hostnameTemplate: ${instance.hostName}
-        includePreviousPhaseNodes: false
+        hostnameTemplate: ''
+        includePreviousPhaseNodes: true
         indices: cv-demo
         messageField: message
         query: level:ERROR
         queryType: MATCH
-        timeDuration: '7'
+        timeDuration: 7
         timestampField: '@timestamp'
         timestampFormat: yyyy-MM-dd'T'HH:mm:ss.SSSX
     - type: SHELL_SCRIPT
