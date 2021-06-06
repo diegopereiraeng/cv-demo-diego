@@ -181,3 +181,5 @@ pipelineStages:
     value: Prometheus
   - name: notify_slack
     value: 'no'
+tags:
+  Squad: ${workflow.variables.Squad}
