@@ -32,6 +32,10 @@ phases:
   - type: K8S_PHASE_STEP
     name: Verify
     stepSkipStrategies:
+    - assertionExpression: ${workflow.variables.verify_elk} == "no" && ${workflow.variables.verify_prometheus} == "no"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Load Test
     - assertionExpression: ${workflow.variables.verify_elk} == "no"
       scope: SPECIFIC_STEPS
       steps:
