@@ -35,7 +35,7 @@ phases:
     - assertionExpression: ${workflow.variables.verify_elk} == "no" && ${workflow.variables.verify_prometheus} == "no"
       scope: SPECIFIC_STEPS
       steps:
-      - HTTP CHECK
+      - HTTP STATUS CHECK
     - assertionExpression: ${workflow.variables.verify_elk} == "no"
       scope: SPECIFIC_STEPS
       steps:
@@ -46,7 +46,7 @@ phases:
       - Prometheus
     steps:
     - type: HTTP
-      name: HTTP CHECK
+      name: HTTP STATUS CHECK
       properties:
         assertion: ${httpResponseCode}==200
         body: ''
