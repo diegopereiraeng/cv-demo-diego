@@ -242,7 +242,7 @@ phases:
         sweepingOutputScope: null
         templateExpressions: null
         timeoutMillis: 600000
-      templateUri: Harness SE/Diego/Load Test:latest
+      templateUri: Harness SE/Diego/Caos Load Test:latest
       templateVariables:
       - name: logsPerMinute
         value: '60'
