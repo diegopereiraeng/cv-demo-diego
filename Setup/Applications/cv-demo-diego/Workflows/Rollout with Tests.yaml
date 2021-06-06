@@ -460,3 +460,9 @@ userVariables:
   mandatory: true
   name: caos_test
   value: 'no'
+- type: TEXT
+  allowedValues: 5,7,10,15,30,60,120
+  fixed: false
+  mandatory: true
+  name: verification_time
+  value: '7'
