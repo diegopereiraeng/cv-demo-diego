@@ -26,6 +26,8 @@ pipelineStages:
   stageName: QA - TEST
   workflowName: Rollout with Tests
   workflowVariables:
+  - name: verify_prometheus
+    value: 'no'
   - entityType: ENVIRONMENT
     name: Environment
     value: qa
@@ -35,6 +37,8 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: test
+  - name: verify_elk
+    value: 'no'
 - type: ENV_STATE
   name: QA Stage Deployment
   parallel: false
@@ -43,6 +47,8 @@ pipelineStages:
   stageName: QA - STAGE
   workflowName: Rollout with Tests
   workflowVariables:
+  - name: verify_prometheus
+    value: 'yes'
   - entityType: ENVIRONMENT
     name: Environment
     value: qa
@@ -52,6 +58,8 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: stage
+  - name: verify_elk
+    value: 'yes'
 - type: APPROVAL
   name: Approval 3
   parallel: false
