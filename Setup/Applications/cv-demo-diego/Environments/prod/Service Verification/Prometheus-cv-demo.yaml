@@ -4,7 +4,7 @@ alertEnabled: false
 alertThreshold: 0.5
 analysisTolerance: LOW
 connectorName: Diego-CV-Demo-Prometheus
-enabled24x7: false
+enabled24x7: true
 numOfOccurrencesForAlert: 1
 serviceName: cv-demo
 timeSeriesList:
