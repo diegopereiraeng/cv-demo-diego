@@ -210,27 +210,6 @@ phases:
         templateVariables: ''
         timeoutMillis: 60000
     - type: SHELL_SCRIPT
-      name: Jmeter
-      properties:
-        commandPath: null
-        connectionAttributes: null
-        executeOnDelegate: true
-        host: null
-        includeInfraSelectors: true
-        outputVars: ''
-        publishAsVar: false
-        scriptString: |-
-          echo './start-jmeter-tests.sh'
-          echo 'jmeter running..'
-          echo 'jmeter complete...'
-        scriptType: BASH
-        sshKeyRef: null
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        templateExpressions: null
-        templateVariables: ''
-        timeoutMillis: 60000
-    - type: SHELL_SCRIPT
       name: Caos Load Test
       properties:
         commandPath: null
@@ -262,6 +241,27 @@ phases:
         value: '0.45'
       - name: shouldDoDelayedCalls
         value: 'true'
+    - type: SHELL_SCRIPT
+      name: Jmeter
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        outputVars: ''
+        publishAsVar: false
+        scriptString: |-
+          echo './start-jmeter-tests.sh'
+          echo 'jmeter running..'
+          echo 'jmeter complete...'
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     - type: SHELL_SCRIPT
       name: Selenium
       properties:
