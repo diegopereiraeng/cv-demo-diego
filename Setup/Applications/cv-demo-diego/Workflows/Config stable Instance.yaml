@@ -25,6 +25,39 @@ phases:
   phaseSteps:
   - type: K8S_PHASE_STEP
     name: Deploy
+    steps:
+    - type: SHELL_SCRIPT
+      name: Canary Instance Config Setup
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Canary Instance Config Setup:latest
+      templateVariables:
+      - name: logsPerMinute
+        value: '600'
+      - name: logErrorRate
+        value: '400'
+      - name: logErrorMessage
+        value: UnknownException
+      - name: callsPerMinute
+        value: '600'
+      - name: errorRate
+        value: '300'
+      - name: minErrorValue
+        value: '0.4'
+      - name: maxErrorValue
+        value: '0.7'
+      - name: shouldDoDelayedCalls
+        value: 'true'
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
