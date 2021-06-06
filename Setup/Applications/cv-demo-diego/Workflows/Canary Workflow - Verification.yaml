@@ -298,21 +298,21 @@ phases:
       templateUri: Harness SE/Diego/Caos Load Test:latest
       templateVariables:
       - name: logsPerMinute
-        value: '60'
+        value: '100'
       - name: logErrorRate
-        value: '5'
+        value: '8'
       - name: logErrorMessage
-        value: KnownException
+        value: DiegoException
       - name: callsPerMinute
-        value: '60'
+        value: '100'
       - name: errorRate
-        value: '1.0'
+        value: '1.5'
       - name: minErrorValue
-        value: '0.01'
+        value: '0.1'
       - name: maxErrorValue
-        value: '0.15'
+        value: '1.0'
       - name: shouldDoDelayedCalls
-        value: 'false'
+        value: 'true'
     - type: SHELL_SCRIPT
       name: Stress Load Test
       properties:
