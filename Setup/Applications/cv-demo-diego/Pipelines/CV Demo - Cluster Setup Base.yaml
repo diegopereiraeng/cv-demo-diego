@@ -62,10 +62,10 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: lab
+    value: prod
   - entityType: SERVICE
     name: Service
     value: cv-demo-ui
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: lab-gke
+    value: ring-0
