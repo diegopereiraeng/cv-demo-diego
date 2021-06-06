@@ -410,5 +410,11 @@ userVariables:
   allowedValues: yes,no
   fixed: false
   mandatory: true
-  name: varify_prometheus
+  name: verify_prometheus
+  value: 'no'
+- type: TEXT
+  allowedValues: yes,no
+  fixed: false
+  mandatory: true
+  name: verify_elk
   value: 'no'
