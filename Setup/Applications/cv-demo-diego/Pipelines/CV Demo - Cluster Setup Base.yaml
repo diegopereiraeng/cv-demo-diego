@@ -11,13 +11,13 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: cv-demo
+    value: prod
   - entityType: SERVICE
     name: Service
     value: nginx-ingress-controller
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ring0
+    value: tools
 - type: ENV_STATE
   name: prometheus
   parallel: true
@@ -28,13 +28,13 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: cv-demo
+    value: lab
   - entityType: SERVICE
     name: Service
     value: prometheus
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ring0
+    value: lab-gke
 - type: ENV_STATE
   name: elastic-search
   parallel: true
@@ -45,13 +45,13 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: cv-demo
+    value: lab
   - entityType: SERVICE
     name: Service
     value: elastic-search
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ring0
+    value: lab-gke
 - type: ENV_STATE
   name: cv-demo-ui
   parallel: false
@@ -62,13 +62,13 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: cv-demo
+    value: lab
   - entityType: SERVICE
     name: Service
     value: cv-demo-ui
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: ring0
+    value: lab-gke
 - type: ENV_STATE
   name: cv-demo
   parallel: false
@@ -79,7 +79,7 @@ pipelineStages:
   workflowVariables:
   - entityType: ENVIRONMENT
     name: Environment
-    value: cv-demo
+    value: lab
   - entityType: SERVICE
     name: Service
     value: cv-demo
