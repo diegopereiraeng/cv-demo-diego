@@ -536,3 +536,8 @@ userVariables:
   mandatory: true
   name: verification_time
   value: '7'
+- type: TEXT
+  allowedValues: Workflow Builder,Experience Builder,Architecture Dashboard,Service Studio
+  fixed: false
+  mandatory: true
+  name: Squad
