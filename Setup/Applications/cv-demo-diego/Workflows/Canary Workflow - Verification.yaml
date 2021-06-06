@@ -255,6 +255,10 @@ phases:
   - type: K8S_PHASE_STEP
     name: Verify
     stepSkipStrategies:
+    - assertionExpression: ${workflow.variables.canary_configuration} == "load" || ${workflow.variables.canary_configuration} == "error"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Stress Load Test
     - assertionExpression: ${workflow.variables.canary_configuration} == "good" || ${workflow.variables.canary_configuration} == "error"
       scope: SPECIFIC_STEPS
       steps:
