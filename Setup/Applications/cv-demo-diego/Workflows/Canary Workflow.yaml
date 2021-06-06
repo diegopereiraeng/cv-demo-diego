@@ -282,6 +282,7 @@ phases:
       - name: maxErrorValue
         value: '0.15'
       - name: shouldDoDelayedCalls
+        value: 'false'
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
