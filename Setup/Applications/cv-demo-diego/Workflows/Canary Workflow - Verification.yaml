@@ -332,13 +332,13 @@ phases:
       - name: logsPerMinute
         value: '60'
       - name: logErrorRate
-        value: '5'
+        value: '1'
       - name: logErrorMessage
         value: KnownException
       - name: callsPerMinute
         value: '60'
       - name: errorRate
-        value: '1.0'
+        value: '0.1'
       - name: minErrorValue
         value: '0.01'
       - name: maxErrorValue
