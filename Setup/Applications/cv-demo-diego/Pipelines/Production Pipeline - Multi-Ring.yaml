@@ -140,6 +140,7 @@ pipelineStages:
     value: ring-1
   - name: metric_verification
     value: Prometheus
+  - name: Squad
   - name: notify_slack
     value: 'yes'
 - type: APPROVAL
