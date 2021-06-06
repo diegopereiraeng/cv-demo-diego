@@ -246,27 +246,6 @@ phases:
         templateVariables: ''
         timeoutMillis: 60000
     - type: SHELL_SCRIPT
-      name: Jmeter
-      properties:
-        commandPath: null
-        connectionAttributes: null
-        executeOnDelegate: true
-        host: null
-        includeInfraSelectors: true
-        outputVars: ''
-        publishAsVar: false
-        scriptString: |-
-          echo './start-jmeter-tests.sh'
-          echo 'jmeter running..'
-          echo 'jmeter complete...'
-        scriptType: BASH
-        sshKeyRef: null
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        templateExpressions: null
-        templateVariables: ''
-        timeoutMillis: 60000
-    - type: SHELL_SCRIPT
       name: Load Test Trigger
       properties:
         commandPath: null
@@ -298,6 +277,27 @@ phases:
         value: '0.05'
       - name: shouldDoDelayedCalls
         value: 'false'
+    - type: SHELL_SCRIPT
+      name: Jmeter
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        outputVars: ''
+        publishAsVar: false
+        scriptString: |-
+          echo './start-jmeter-tests.sh'
+          echo 'jmeter running..'
+          echo 'jmeter complete...'
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     - type: SHELL_SCRIPT
       name: Selenium
       properties:
