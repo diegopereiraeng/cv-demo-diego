@@ -33,28 +33,37 @@ phases:
     name: Wrap Up
     steps:
     - type: SHELL_SCRIPT
-      name: Canary Instance Config Setup
+      name: Stable Instance Config Setup
       properties:
+        commandPath: null
+        connectionAttributes: null
         executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
         timeoutMillis: 600000
       templateUri: Harness SE/Diego/Canary Instance Config Setup:latest
       templateVariables:
       - name: logsPerMinute
-        value: '60'
+        value: '600'
       - name: logErrorRate
-        value: '5'
+        value: '500'
       - name: logErrorMessage
-        value: KnownException
+        value: UnknownException
       - name: callsPerMinute
-        value: '60'
+        value: '600'
       - name: errorRate
-        value: '5.0'
+        value: '500'
       - name: minErrorValue
-        value: '0.01'
+        value: '0.4'
       - name: maxErrorValue
-        value: '0.15'
+        value: '0.7'
       - name: shouldDoDelayedCalls
-        value: 'false'
+        value: 'true'
     stepsInParallel: false
   provisionNodes: false
   serviceName: cv-demo
