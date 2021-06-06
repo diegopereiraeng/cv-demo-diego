@@ -204,15 +204,15 @@ phases:
       templateUri: Harness SE/Diego/Run Pod CV-DEMO Command:latest
       templateVariables:
       - name: logsPerMinute
-        value: '500'
+        value: '60'
       - name: logErrorRate
-        value: '0'
+        value: '1'
       - name: logErrorMessage
         value: KnownException
       - name: callsPerMinute
-        value: '200'
+        value: '60'
       - name: errorRate
-        value: '0.1'
+        value: '1.0'
       - name: minErrorValue
         value: '0.01'
       - name: maxErrorValue
