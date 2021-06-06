@@ -99,27 +99,6 @@ phases:
         value: '0.45'
       - name: shouldDoDelayedCalls
         value: 'true'
-    - type: PROMETHEUS
-      name: Prometheus
-      properties:
-        analysisServerConfigId: PHxpU5O3S9CkapFquK9Yqg
-        analysisTolerance: LOW
-        comparisonStrategy: COMPARE_WITH_PREVIOUS
-        customThresholdRefId: 7c541482935349f3b714b41b1356927f
-        executeWithPreviousSteps: true
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeDuration: ${workflow.variables.verification_time}
-        timeSeriesToAnalyze:
-        - metricName: normal_call
-          metricType: THROUGHPUT
-          txnName: custom
-          url: io_harness_custom_metric_normal_call{kubernetes_pod_name="$hostName"}
-        - metricName: error_call
-          metricType: ERROR
-          txnName: custom
-          url: io_harness_custom_metric_error_call{kubernetes_pod_name="$hostName"}
     - type: SHELL_SCRIPT
       name: Load Test Trigger
       properties:
@@ -152,6 +131,27 @@ phases:
         value: '0.05'
       - name: shouldDoDelayedCalls
         value: 'false'
+    - type: PROMETHEUS
+      name: Prometheus
+      properties:
+        analysisServerConfigId: PHxpU5O3S9CkapFquK9Yqg
+        analysisTolerance: LOW
+        comparisonStrategy: COMPARE_WITH_PREVIOUS
+        customThresholdRefId: 7c541482935349f3b714b41b1356927f
+        executeWithPreviousSteps: true
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeDuration: ${workflow.variables.verification_time}
+        timeSeriesToAnalyze:
+        - metricName: normal_call
+          metricType: THROUGHPUT
+          txnName: custom
+          url: io_harness_custom_metric_normal_call{kubernetes_pod_name="$hostName"}
+        - metricName: error_call
+          metricType: ERROR
+          txnName: custom
+          url: io_harness_custom_metric_error_call{kubernetes_pod_name="$hostName"}
     - type: ELK
       name: ELK
       properties:
