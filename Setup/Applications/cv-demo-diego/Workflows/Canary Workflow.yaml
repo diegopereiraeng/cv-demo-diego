@@ -713,3 +713,8 @@ userVariables:
   mandatory: true
   name: canary_configuration
   value: error
+- type: TEXT
+  allowedValues: Workflow Builder,Experience Builder,Architecture Dashboard,Service Studio
+  fixed: false
+  mandatory: true
+  name: Squad
