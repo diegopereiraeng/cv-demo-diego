@@ -32,6 +32,10 @@ phases:
   - type: K8S_PHASE_STEP
     name: Verify
     stepSkipStrategies:
+    - assertionExpression: ${workflow.variables.caos_test} == "yes"
+      scope: SPECIFIC_STEPS
+      steps:
+      - Load Test Trigger
     - assertionExpression: ${workflow.variables.caos_test} == "no"
       scope: SPECIFIC_STEPS
       steps:
