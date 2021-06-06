@@ -51,8 +51,10 @@ pipelineStages:
   workflowVariables:
   - name: verify_prometheus
     value: 'yes'
+  - name: verification_time
+    value: '5'
   - name: caos_test
-    value: 'yes'
+    value: 'no'
   - entityType: ENVIRONMENT
     name: Environment
     value: qa
