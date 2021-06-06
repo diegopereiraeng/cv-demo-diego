@@ -344,26 +344,35 @@ phases:
         templateVariables: ''
         timeoutMillis: 60000
     - type: SHELL_SCRIPT
-      name: Run Pod CV-DEMO Command
+      name: Load Test Trigger
       properties:
+        commandPath: null
+        connectionAttributes: null
         executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
         timeoutMillis: 600000
       templateUri: Harness SE/Diego/Run Pod CV-DEMO Command:latest
       templateVariables:
       - name: logsPerMinute
-        value: '60'
+        value: '600'
       - name: logErrorRate
-        value: '5'
+        value: '1'
       - name: logErrorMessage
         value: KnownException
       - name: callsPerMinute
-        value: '60'
+        value: '600'
       - name: errorRate
-        value: '5.0'
+        value: '1.0'
       - name: minErrorValue
         value: '0.01'
       - name: maxErrorValue
-        value: '0.15'
+        value: '0.05'
       - name: shouldDoDelayedCalls
         value: 'false'
     stepsInParallel: true
