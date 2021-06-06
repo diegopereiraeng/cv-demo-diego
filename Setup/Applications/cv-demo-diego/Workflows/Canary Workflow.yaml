@@ -338,11 +338,11 @@ phases:
       - name: callsPerMinute
         value: '60'
       - name: errorRate
-        value: '0.1'
+        value: '0.00'
       - name: minErrorValue
-        value: '0.01'
+        value: '0.00'
       - name: maxErrorValue
-        value: '0.08'
+        value: '0.01'
       - name: shouldDoDelayedCalls
         value: 'false'
     - type: PROMETHEUS
