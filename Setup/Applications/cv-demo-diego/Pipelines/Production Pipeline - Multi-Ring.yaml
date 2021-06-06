@@ -35,8 +35,6 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: test
-  - name: varify_prometheus
-    value: 'no'
 - type: ENV_STATE
   name: QA Stage Deployment
   parallel: false
@@ -54,8 +52,6 @@ pipelineStages:
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
     value: stage
-  - name: varify_prometheus
-    value: 'yes'
 - type: APPROVAL
   name: Approval 3
   parallel: false
@@ -159,7 +155,7 @@ pipelineStages:
   - name: verify_canary
     value: 'yes'
   - name: canary_configuration
-    value: load
+    value: good
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
