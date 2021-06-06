@@ -31,6 +31,30 @@ phases:
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
+    steps:
+    - type: SHELL_SCRIPT
+      name: Canary Instance Config Setup
+      properties:
+        executeOnDelegate: true
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Canary Instance Config Setup:latest
+      templateVariables:
+      - name: logsPerMinute
+        value: '60'
+      - name: logErrorRate
+        value: '5'
+      - name: logErrorMessage
+        value: KnownException
+      - name: callsPerMinute
+        value: '60'
+      - name: errorRate
+        value: '5.0'
+      - name: minErrorValue
+        value: '0.01'
+      - name: maxErrorValue
+        value: '0.15'
+      - name: shouldDoDelayedCalls
+        value: 'false'
     stepsInParallel: false
   provisionNodes: false
   serviceName: cv-demo
