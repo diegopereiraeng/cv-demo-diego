@@ -49,6 +49,8 @@ pipelineStages:
   workflowVariables:
   - name: verify_prometheus
     value: 'yes'
+  - name: caos_test
+    value: 'yes'
   - entityType: ENVIRONMENT
     name: Environment
     value: qa
@@ -80,7 +82,7 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: RING 0
-  workflowName: Canary Workflow - Verification
+  workflowName: Canary Workflow
   workflowVariables:
   - name: verify_canary
     value: 'yes'
@@ -119,7 +121,7 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: RING 1
-  workflowName: Canary Workflow - Verification
+  workflowName: Canary Workflow
   workflowVariables:
   - name: verify_canary
     value: 'yes'
@@ -158,7 +160,7 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: RING 2
-  workflowName: Canary Workflow - Verification
+  workflowName: Canary Workflow
   workflowVariables:
   - name: verify_canary
     value: 'yes'
