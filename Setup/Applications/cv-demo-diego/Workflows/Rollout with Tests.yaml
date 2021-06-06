@@ -450,3 +450,9 @@ userVariables:
   mandatory: true
   name: verify_elk
   value: 'no'
+- type: TEXT
+  allowedValues: yes,no
+  fixed: false
+  mandatory: true
+  name: caos_test
+  value: 'no'
