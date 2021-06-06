@@ -179,6 +179,8 @@ pipelineStages:
     value: ring-2
   - name: metric_verification
     value: Prometheus
+  - name: Squad
+    value: Workflow Builder
   - name: notify_slack
     value: 'no'
 tags:
