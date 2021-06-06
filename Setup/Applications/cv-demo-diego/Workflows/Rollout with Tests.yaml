@@ -143,10 +143,11 @@ phases:
         comparisonStrategy: COMPARE_WITH_PREVIOUS
         customThresholdRefId: 7c541482935349f3b714b41b1356927f
         executeWithPreviousSteps: true
+        includePreviousPhaseNodes: true
         templateUuid: null
         templateVariables: null
         templateVersion: null
-        timeDuration: ${workflow.variables.verification_time}
+        timeDuration: 5
         timeSeriesToAnalyze:
         - metricName: normal_call
           metricType: THROUGHPUT
