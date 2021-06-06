@@ -206,7 +206,7 @@ phases:
         templateExpressions: null
         templateVariables: ''
         timeoutMillis: 60000
-    stepsInParallel: false
+    stepsInParallel: true
   - type: K8S_PHASE_STEP
     name: Wrap Up
     stepsInParallel: false
