@@ -76,6 +76,115 @@ phases:
           metricType: ERROR
           txnName: custom
           url: io_harness_custom_metric_error_call{kubernetes_pod_name="$hostName"}
+    - type: SHELL_SCRIPT
+      name: Regression Tests
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        outputVars: ''
+        publishAsVar: false
+        scriptString: "cat << EOM\n-------------------------------------------------------\n\
+          \ T E S T S\n-------------------------------------------------------\nRunning\
+          \ org.openshift.quickstarts.tomcat.test.CamelAmqIT\n2017-01-16 18:14:38,372\
+          \ [main           ] INFO  XmlBeanDefinitionReader        - Loading XML bean\
+          \ definitions from class path resource [testContext.xml]\n2017-01-16 18:14:40,997\
+          \ [main           ] INFO  CamelSpringTestContextLoader   - Enabling Camel\
+          \ JMX as DisableJmx annotation was found and disableJmx is set to false.\n\
+          2017-01-16 18:14:41,043 [main           ] INFO  GenericApplicationContext\
+          \      - Refreshing org.springframework.context.support.GenericApplicationContext@4f970963:\
+          \ startup date [Mon Jan 16 18:14:41 UTC 2017]; root of context hierarchy\n\
+          2017-01-16 18:14:41,633 [main           ] INFO  DefaultListableBeanFactory\
+          \     - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@490caf5f:\
+          \ defining beans [propertyConfigurer,template,consumerTemplate,camelContext:beanPostProcessor,camelContext,activemq,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor];\
+          \ root of factory hierarchy\n2017-01-16 18:14:42,355 [main           ] INFO\
+          \  CamelSpringTestContextLoader   - Setting shutdown timeout to [10 SECONDS]\
+          \ on CamelContext with name [camelContext].\n2017-01-16 18:14:42,360 [main\
+          \           ] INFO  CamelSpringTestContextLoader   - Enabling lazy loading\
+          \ of type converters on CamelContext with name [camelContext].\n2017-01-16\
+          \ 18:14:42,366 [main           ] INFO  CamelSpringTestContextLoader   -\
+          \ Starting CamelContext with name [camelContext].\n2017-01-16 18:14:42,371\
+          \ [main           ] INFO  SpringCamelContext             - Apache Camel\
+          \ 2.15.1.redhat-621084 (CamelContext: camelContext) is starting\n2017-01-16\
+          \ 18:14:42,373 [main           ] INFO  ManagedManagementStrategy      -\
+          \ JMX is enabled\n2017-01-16 18:14:43,480 [main           ] INFO  SpringCamelContext\
+          \             - AllowUseOriginalMessage is enabled. If access to the original\
+          \ message is not needed, then its recommended to turn this option off as\
+          \ it may improve performance.\n2017-01-16 18:14:43,481 [main           ]\
+          \ INFO  SpringCamelContext             - StreamCaching is not in use. If\
+          \ using streams then its recommended to enable stream caching. See more\
+          \ details at http://camel.apache.org/stream-caching.html\n2017-01-16 18:14:44,462\
+          \ [main           ] INFO  SpringCamelContext             - Route: helloQueue\
+          \ started and consuming from: Endpoint[activemq://queue:helloqueue]\n2017-01-16\
+          \ 18:14:44,462 [main           ] INFO  SpringCamelContext             -\
+          \ Total 1 routes, of which 1 is started.\n2017-01-16 18:14:44,512 [main\
+          \           ] INFO  SpringCamelContext             - Apache Camel 2.15.1.redhat-621084\
+          \ (CamelContext: camelContext) started in 2.095 seconds\n2017-01-16 18:14:44,881\
+          \ [mer[helloqueue]] INFO  helloQueue                     - received { 'hello':'world'\
+          \ }\n2017-01-16 18:14:44,898 [mer[helloqueue]] INFO  helloQueue        \
+          \             - received { 'hello':'world' }\n2017-01-16 18:14:44,941 [mer[helloqueue]]\
+          \ INFO  helloQueue                     - received { 'hello':'world' }\n\
+          2017-01-16 18:14:44,959 [mer[helloqueue]] INFO  helloQueue             \
+          \        - received { 'hello':'world' }\n2017-01-16 18:14:44,991 [mer[helloqueue]]\
+          \ INFO  helloQueue                     - received { 'hello':'world' }\n\
+          2017-01-16 18:14:45,021 [mer[helloqueue]] INFO  helloQueue             \
+          \        - received { 'hello':'world' }\n2017-01-16 18:14:45,126 [mer[helloqueue]]\
+          \ INFO  helloQueue                     - received { 'hello':'world' }\n\
+          2017-01-16 18:14:45,222 [mer[helloqueue]] INFO  helloQueue             \
+          \        - received { 'hello':'world' }\n2017-01-16 18:14:45,348 [mer[helloqueue]]\
+          \ INFO  helloQueue                     - received { 'hello':'world' }\n\
+          2017-01-16 18:14:45,408 [mer[helloqueue]] INFO  helloQueue             \
+          \        - received { 'hello':'world' }\n2017-01-16 18:14:55,413 [main \
+          \          ] INFO  MockEndpoint                   - Asserting: Endpoint[mock://mypoint]\
+          \ is satisfied\n2017-01-16 18:14:55,414 [main           ] INFO  CamelAmqIT\
+          \                     - ********************************************************************************\n\
+          2017-01-16 18:14:55,414 [main           ] INFO  CamelAmqIT             \
+          \        - Testing done: runTest(org.openshift.quickstarts.tomcat.test.CamelAmqIT)\n\
+          2017-01-16 18:14:55,414 [main           ] INFO  CamelAmqIT             \
+          \        - Took: 10.881 seconds (10881 millis)\n2017-01-16 18:14:55,414\
+          \ [main           ] INFO  CamelAmqIT                     - ********************************************************************************\n\
+          2017-01-16 18:14:55,415 [main           ] INFO  GenericApplicationContext\
+          \      - Closing org.springframework.context.support.GenericApplicationContext@4f970963:\
+          \ startup date [Mon Jan 16 18:14:41 UTC 2017]; root of context hierarchy\n\
+          2017-01-16 18:14:55,416 [main           ] INFO  SpringCamelContext     \
+          \        - Apache Camel 2.15.1.redhat-621084 (CamelContext: camelContext)\
+          \ is shutting down\n2017-01-16 18:14:55,418 [main           ] INFO  DefaultShutdownStrategy\
+          \        - Starting to graceful shutdown 1 routes (timeout 10 seconds)\n\
+          2017-01-16 18:14:55,435 [ - ShutdownTask] INFO  DefaultShutdownStrategy\
+          \        - Route: helloQueue shutdown complete, was consuming from: Endpoint[activemq://queue:helloqueue]\n\
+          2017-01-16 18:14:55,438 [main           ] INFO  DefaultShutdownStrategy\
+          \        - Graceful shutdown of 1 routes completed in 0 seconds\n2017-01-16\
+          \ 18:14:55,471 [main           ] INFO  SpringCamelContext             -\
+          \ Apache Camel 2.15.1.redhat-621084 (CamelContext: camelContext) uptime\
+          \ 13.103 seconds\n2017-01-16 18:14:55,471 [main           ] INFO  SpringCamelContext\
+          \             - Apache Camel 2.15.1.redhat-621084 (CamelContext: camelContext)\
+          \ is shutdown in 0.054 seconds\n2017-01-16 18:14:55,473 [main          \
+          \ ] INFO  DefaultListableBeanFactory     - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@490caf5f:\
+          \ defining beans [propertyConfigurer,template,consumerTemplate,camelContext:beanPostProcessor,camelContext,activemq,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor];\
+          \ root of factory hierarchy\nTests run: 1, Failures: 0, Errors: 0, Skipped:\
+          \ 0, Time elapsed: 18.698 sec - in org.openshift.quickstarts.tomcat.test.CamelAmqIT\n\
+          \nResults :\n\nTests run: 1, Failures: 0, Errors: 0, Skipped: 0\n\n[WARNING]\
+          \ File encoding has not been set, using platform encoding ANSI_X3.4-1968,\
+          \ i.e. build is platform dependent! The file encoding for reports output\
+          \ files should be provided by the POM property ${project.reporting.outputEncoding}.\n\
+          [INFO] \n[INFO] --- maven-failsafe-plugin:2.19.1:verify (verify) @ tomcat-jdbc\
+          \ ---\n[WARNING] File encoding has not been set, using platform encoding\
+          \ ANSI_X3.4-1968, i.e. build is platform dependent! The file encoding for\
+          \ reports output files should be provided by the POM property ${project.reporting.outputEncoding}.\n\
+          [INFO] ------------------------------------------------------------------------\n\
+          [INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n\
+          [INFO] Total time: 01:35 min\n[INFO] Finished at: 2017-01-16T18:14:55+00:00\n\
+          [INFO] Final Memory: 48M/577M\n[INFO] ------------------------------------------------------------------------\n\
+          EOM\nexit 0"
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
