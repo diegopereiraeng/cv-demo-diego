@@ -372,6 +372,38 @@ phases:
         includePreviousPhaseNodes: false
         timeDuration: '10'
     - type: SHELL_SCRIPT
+      name: Stress Load Test
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Stress Load Test:latest
+      templateVariables:
+      - name: logsPerMinute
+        value: '60'
+      - name: logErrorRate
+        value: '5'
+      - name: logErrorMessage
+        value: KnownException
+      - name: callsPerMinute
+        value: '60'
+      - name: errorRate
+        value: '1.0'
+      - name: minErrorValue
+        value: '0.01'
+      - name: maxErrorValue
+        value: '0.15'
+      - name: shouldDoDelayedCalls
+        value: 'false'
+    - type: SHELL_SCRIPT
       name: Slack Notification Verification Completed
       properties:
         commandPath: null
@@ -404,38 +436,6 @@ phases:
         value: primary
       - name: Title
         value: Verification Completed with Success - Waiting for Approval
-    - type: SHELL_SCRIPT
-      name: Stress Load Test
-      properties:
-        commandPath: null
-        connectionAttributes: null
-        executeOnDelegate: true
-        host: null
-        includeInfraSelectors: true
-        publishAsVar: false
-        sshKeyRef: null
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        templateExpressions: null
-        timeoutMillis: 600000
-      templateUri: Harness SE/Diego/Stress Load Test:latest
-      templateVariables:
-      - name: logsPerMinute
-        value: '60'
-      - name: logErrorRate
-        value: '5'
-      - name: logErrorMessage
-        value: KnownException
-      - name: callsPerMinute
-        value: '60'
-      - name: errorRate
-        value: '1.0'
-      - name: minErrorValue
-        value: '0.01'
-      - name: maxErrorValue
-        value: '0.15'
-      - name: shouldDoDelayedCalls
-        value: 'false'
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
