@@ -110,7 +110,7 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
-        timeDuration: 7
+        timeDuration: ${workflow.variables.verification_time}
         timeSeriesToAnalyze:
         - metricName: normal_call
           metricType: THROUGHPUT
