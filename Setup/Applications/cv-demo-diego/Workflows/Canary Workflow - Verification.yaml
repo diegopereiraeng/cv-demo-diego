@@ -330,22 +330,6 @@ phases:
           metricType: ERROR
           txnName: custom
           url: io_harness_custom_metric_error_call{kubernetes_pod_name="$hostName"}
-    - type: ELK
-      name: ELK
-      properties:
-        analysisServerConfigId: o6RSJjxiQDOSf4clb1XWUQ
-        comparisonStrategy: COMPARE_WITH_CURRENT
-        executeWithPreviousSteps: true
-        hostnameField: hostname
-        hostnameTemplate: ${instance.hostName}
-        includePreviousPhaseNodes: false
-        indices: cv-demo
-        messageField: message
-        query: level:ERROR
-        queryType: MATCH
-        timeDuration: 5
-        timestampField: '@timestamp'
-        timestampFormat: yyyy-MM-dd'T'HH:mm:ss.SSSX
     - type: SHELL_SCRIPT
       name: Stress Load Test
       properties:
@@ -378,6 +362,22 @@ phases:
         value: '0.15'
       - name: shouldDoDelayedCalls
         value: 'false'
+    - type: ELK
+      name: ELK
+      properties:
+        analysisServerConfigId: o6RSJjxiQDOSf4clb1XWUQ
+        comparisonStrategy: COMPARE_WITH_CURRENT
+        executeWithPreviousSteps: true
+        hostnameField: hostname
+        hostnameTemplate: ${instance.hostName}
+        includePreviousPhaseNodes: false
+        indices: cv-demo
+        messageField: message
+        query: level:ERROR
+        queryType: MATCH
+        timeDuration: 5
+        timestampField: '@timestamp'
+        timestampFormat: yyyy-MM-dd'T'HH:mm:ss.SSSX
     - type: APP_DYNAMICS
       name: AppDynamics
       properties:
