@@ -310,26 +310,35 @@ phases:
     - type: SHELL_SCRIPT
       name: Caos Load Test
       properties:
+        commandPath: null
+        connectionAttributes: null
         executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
         timeoutMillis: 600000
       templateUri: Harness SE/Diego/Caos Load Test:latest
       templateVariables:
       - name: logsPerMinute
-        value: '60'
+        value: '600'
       - name: logErrorRate
-        value: '5'
+        value: '200'
       - name: logErrorMessage
-        value: KnownException
+        value: DiegoException
       - name: callsPerMinute
-        value: '60'
+        value: '600'
       - name: errorRate
-        value: '1.0'
+        value: '5.0'
       - name: minErrorValue
-        value: '0.01'
+        value: '0.1'
       - name: maxErrorValue
-        value: '0.15'
+        value: '0.45'
       - name: shouldDoDelayedCalls
-        value: 'false'
+        value: 'true'
     stepsInParallel: true
   - type: K8S_PHASE_STEP
     name: Wrap Up
