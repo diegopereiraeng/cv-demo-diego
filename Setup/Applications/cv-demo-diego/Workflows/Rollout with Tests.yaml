@@ -386,9 +386,18 @@ rollbackPhases:
     phaseStepNameForRollback: Wrap Up
     steps:
     - type: SHELL_SCRIPT
-      name: Run Pod CV-DEMO Command
+      name: App config
       properties:
+        commandPath: null
+        connectionAttributes: null
         executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
         timeoutMillis: 600000
       templateUri: Harness SE/Diego/Run Pod CV-DEMO Command:latest
       templateVariables:
