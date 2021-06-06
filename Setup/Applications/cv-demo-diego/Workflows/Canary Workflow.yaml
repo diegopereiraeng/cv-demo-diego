@@ -212,11 +212,11 @@ phases:
       - name: callsPerMinute
         value: '60'
       - name: errorRate
-        value: '1.0'
+        value: '0.0'
       - name: minErrorValue
-        value: '0.01'
+        value: '0.00'
       - name: maxErrorValue
-        value: '0.02'
+        value: '0.01'
       - name: shouldDoDelayedCalls
         value: 'false'
     - type: SHELL_SCRIPT
