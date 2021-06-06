@@ -216,7 +216,7 @@ phases:
       - name: minErrorValue
         value: '0.01'
       - name: maxErrorValue
-        value: '0.1'
+        value: '0.02'
       - name: shouldDoDelayedCalls
         value: 'false'
     - type: SHELL_SCRIPT
