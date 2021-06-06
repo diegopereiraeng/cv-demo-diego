@@ -17,7 +17,7 @@ pipelineStages:
     value: nginx-ingress-controller
   - entityType: INFRASTRUCTURE_DEFINITION
     name: InfraDefinition_KUBERNETES
-    value: tools
+    value: ring-3
 - type: ENV_STATE
   name: prometheus
   parallel: true
