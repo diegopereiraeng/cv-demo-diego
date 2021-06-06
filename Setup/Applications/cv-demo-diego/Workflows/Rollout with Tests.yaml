@@ -101,6 +101,38 @@ phases:
         timestampField: '@timestamp'
         timestampFormat: yyyy-MM-dd'T'HH:mm:ss.SSSX
     - type: SHELL_SCRIPT
+      name: Caos Load Test
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        publishAsVar: false
+        sshKeyRef: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        timeoutMillis: 600000
+      templateUri: Harness SE/Diego/Caos Load Test:latest
+      templateVariables:
+      - name: logsPerMinute
+        value: '600'
+      - name: logErrorRate
+        value: '200'
+      - name: logErrorMessage
+        value: DiegoException
+      - name: callsPerMinute
+        value: '600'
+      - name: errorRate
+        value: '5.0'
+      - name: minErrorValue
+        value: '0.1'
+      - name: maxErrorValue
+        value: '0.45'
+      - name: shouldDoDelayedCalls
+        value: 'true'
+    - type: SHELL_SCRIPT
       name: Regression Tests
       properties:
         commandPath: null
@@ -209,38 +241,6 @@ phases:
         templateExpressions: null
         templateVariables: ''
         timeoutMillis: 60000
-    - type: SHELL_SCRIPT
-      name: Caos Load Test
-      properties:
-        commandPath: null
-        connectionAttributes: null
-        executeOnDelegate: true
-        host: null
-        includeInfraSelectors: true
-        publishAsVar: false
-        sshKeyRef: null
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        templateExpressions: null
-        timeoutMillis: 600000
-      templateUri: Harness SE/Diego/Caos Load Test:latest
-      templateVariables:
-      - name: logsPerMinute
-        value: '600'
-      - name: logErrorRate
-        value: '200'
-      - name: logErrorMessage
-        value: DiegoException
-      - name: callsPerMinute
-        value: '600'
-      - name: errorRate
-        value: '5.0'
-      - name: minErrorValue
-        value: '0.1'
-      - name: maxErrorValue
-        value: '0.45'
-      - name: shouldDoDelayedCalls
-        value: 'true'
     - type: SHELL_SCRIPT
       name: Jmeter
       properties:
