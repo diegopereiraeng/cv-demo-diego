@@ -15,6 +15,15 @@ failureStrategies:
   manualInterventionTimeout: 120000
   repairActionCode: MANUAL_INTERVENTION
   retryCount: 0
+- actionAfterTimeout: ROLLBACK
+  executionScope: WORKFLOW
+  failureTypes:
+  - APPLICATION_ERROR
+  - CONNECTIVITY
+  - AUTHENTICATION
+  manualInterventionTimeout: 172800000
+  repairActionCode: MANUAL_INTERVENTION
+  retryCount: 0
 notificationRules:
 - conditions:
   - FAILED
