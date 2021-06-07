@@ -11,8 +11,8 @@ timeSeriesList:
 - metricName: normal_call
   metricType: THROUGHPUT
   txnName: custom
-  url: io_harness_custom_metric_normal_call{app="cv-demo"}
+  url: io_harness_custom_metric_normal_call{app="cv-demo",kubernetes_namespace="ring0"}
 - metricName: error_call
   metricType: ERROR
   txnName: custom
-  url: io_harness_custom_metric_error_call{app="cv-demo"}
+  url: io_harness_custom_metric_error_call{app="cv-demo",kubernetes_namespace="ring0"}
