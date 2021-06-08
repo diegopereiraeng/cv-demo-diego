@@ -210,7 +210,7 @@ phases:
       - name: logsPerMinute
         value: '60'
       - name: logErrorRate
-        value: '1'
+        value: '0'
       - name: logErrorMessage
         value: KnownException
       - name: callsPerMinute
@@ -489,6 +489,9 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
+    stepsInParallel: false
+  - type: K8S_PHASE_STEP
+    name: Sessao XPTO
     stepsInParallel: false
   provisionNodes: false
   serviceName: cv-demo
