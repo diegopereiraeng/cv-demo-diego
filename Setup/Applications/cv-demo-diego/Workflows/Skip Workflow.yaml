@@ -25,6 +25,28 @@ phases:
   phaseSteps:
   - type: K8S_PHASE_STEP
     name: Deploy
+    steps:
+    - type: SHELL_SCRIPT
+      name: Shell Script
+      properties:
+        commandPath: null
+        connectionAttributes: null
+        executeOnDelegate: true
+        host: null
+        includeInfraSelectors: true
+        outputVars: ''
+        publishAsVar: true
+        scriptString: |-
+          test=true
+
+          export test
+        scriptType: BASH
+        sshKeyRef: null
+        sweepingOutputName: check
+        sweepingOutputScope: PIPELINE
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
