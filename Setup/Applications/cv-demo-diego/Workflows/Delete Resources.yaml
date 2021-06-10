@@ -20,7 +20,7 @@ phases:
 - type: KUBERNETES
   computeProviderName: K8S Diego GKE
   daemonSet: false
-  infraDefinitionName: ring-0
+  infraDefinitionName: ring-2
   name: Rolling
   phaseSteps:
   - type: K8S_PHASE_STEP
@@ -61,7 +61,7 @@ rollbackPhases:
 - type: KUBERNETES
   computeProviderName: K8S Diego GKE
   daemonSet: false
-  infraDefinitionName: ring-0
+  infraDefinitionName: ring-2
   name: Rollback Rolling
   phaseNameForRollback: Rolling
   phaseSteps:
