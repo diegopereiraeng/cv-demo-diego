@@ -26,12 +26,6 @@ phases:
   - type: K8S_PHASE_STEP
     name: Delete
     steps:
-    - type: K8S_DELETE
-      name: Delete
-      properties:
-        deleteNamespacesForRelease: false
-        resources: Deployment/cv-demo
-        stateTimeoutInMinutes: 10
     - type: SHELL_SCRIPT
       name: Shell Script
       properties:
@@ -50,6 +44,12 @@ phases:
         templateExpressions: null
         templateVariables: ''
         timeoutMillis: 60000
+    - type: K8S_DELETE
+      name: Delete
+      properties:
+        deleteNamespacesForRelease: false
+        resources: Deployment/cv-demo
+        stateTimeoutInMinutes: 10
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
