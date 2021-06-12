@@ -36,7 +36,17 @@ phases:
         includeInfraSelectors: true
         outputVars: ''
         publishAsVar: false
-        scriptString: 'echo "text secret is: ${secrets.getValue(''diego-simple-secret'')}"'
+        scriptString: |-
+          echo "Deleting All Environments"
+
+
+          kubectl delete ns gke-dev
+          kubectl delete ns test
+          kubectl delete ns stage
+          kubectl delete ns gke
+          kubectl delete ns ring-0
+          kubectl delete ns ring-1
+          kubectl delete ns ring-2
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
@@ -45,7 +55,7 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
-        timeoutMillis: 60000
+        timeoutMillis: 900000
     - type: K8S_DELETE
       name: Delete
       properties:
