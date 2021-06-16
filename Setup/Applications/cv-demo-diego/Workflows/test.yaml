@@ -31,6 +31,16 @@ phases:
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
+    steps:
+    - type: K8S_TRAFFIC_SPLIT
+      name: Traffic Split 10%
+      properties:
+        istioDestinationWeights:
+        - destination: ${k8s.stableDestination}
+          weight: '90'
+        - destination: ${k8s.canaryDestination}
+          weight: '10'
+        virtualServiceName: ${k8s.virtualServiceName}
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Route Update
