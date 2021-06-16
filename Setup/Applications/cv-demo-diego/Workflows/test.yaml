@@ -41,6 +41,14 @@ phases:
         - destination: ${k8s.canaryDestination}
           weight: '10'
         virtualServiceName: ${k8s.virtualServiceName}
+    - type: DATA_DOG
+      name: Datadog Metrics
+      properties:
+        analysisServerConfigId: VDRq-SkFSdWpg66Xfw9b4g
+        analysisTolerance: LOW
+        comparisonStrategy: COMPARE_WITH_PREVIOUS
+        metrics: docker.cpu.usage
+        timeDuration: 15
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Route Update
