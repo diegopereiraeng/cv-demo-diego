@@ -6,7 +6,7 @@ pipelineStages:
   parallel: false
   skipCondition:
     type: DO_NOT_SKIP
-  stageName: DEV
+  stageName: QA - TEST
   workflowName: Simple Rollout
   workflowVariables:
   - entityType: ENVIRONMENT
@@ -20,7 +20,7 @@ pipelineStages:
     value: ${Infra-Dev}
 - type: ENV_STATE
   name: QA Test Deployment
-  parallel: false
+  parallel: true
   skipCondition:
     type: DO_NOT_SKIP
   stageName: QA - TEST
@@ -28,6 +28,8 @@ pipelineStages:
   workflowVariables:
   - name: verify_prometheus
     value: 'no'
+  - name: verification_time
+    value: '7'
   - name: caos_test
     value: 'no'
   - entityType: ENVIRONMENT
@@ -41,6 +43,7 @@ pipelineStages:
     value: test
   - name: verify_elk
     value: 'no'
+  - name: Squad
 - type: ENV_STATE
   name: QA Stage Deployment
   parallel: false
