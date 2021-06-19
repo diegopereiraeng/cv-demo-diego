@@ -59,7 +59,7 @@ phases:
       name: Canary Deployment
       properties:
         instanceUnitType: PERCENTAGE
-        instances: '20'
+        instances: '10'
         stateTimeoutInMinutes: 10
         templateUuid: null
         templateVariables: null
