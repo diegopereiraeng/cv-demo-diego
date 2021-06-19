@@ -9,7 +9,7 @@ spec:
   type: ClusterIP
   ports:
   - name: http-canary
-    port: 80
+    port: 8080
     targetPort: http
     protocol: TCP
   selector:
@@ -27,7 +27,7 @@ spec:
   type: ClusterIP
   ports:
   - name: http-stable
-    port: 80
+    port: 8080
     targetPort: http
     protocol: TCP
   selector:

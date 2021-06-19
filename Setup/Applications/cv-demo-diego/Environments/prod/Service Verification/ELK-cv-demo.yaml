@@ -1,0 +1,17 @@
+harnessApiVersion: '1.0'
+type: ELK
+alertEnabled: false
+alertPriority: P5
+alertThreshold: 0.5
+baselineEndMinute: 27050025
+baselineStartMinute: 27049306
+connectorName: Diego-CV-Demo-ELK
+enabled24x7: true
+hostnameField: hostname
+index: cv-demo
+messageField: message
+numOfOccurrencesForAlert: 1
+query: level:ERROR
+serviceName: cv-demo
+timestampField: '@timestamp'
+timestampFormat: yyyy-MM-dd'T'HH:mm:ss.SSSX

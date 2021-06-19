@@ -101,6 +101,7 @@ pipelineStages:
     value: ring-0
   - name: metric_verification
     value: Prometheus
+  - name: Squad
   - name: notify_slack
     value: 'no'
 - type: APPROVAL
@@ -128,7 +129,7 @@ pipelineStages:
   - name: verify_canary
     value: 'yes'
   - name: canary_configuration
-    value: load
+    value: good
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
@@ -168,7 +169,7 @@ pipelineStages:
   - name: verify_canary
     value: 'yes'
   - name: canary_configuration
-    value: good
+    value: load
   - entityType: ENVIRONMENT
     name: Environment
     value: prod
@@ -183,5 +184,3 @@ pipelineStages:
   - name: Squad
   - name: notify_slack
     value: 'no'
-tags:
-  Squad: ${workflow.variables.Squad}

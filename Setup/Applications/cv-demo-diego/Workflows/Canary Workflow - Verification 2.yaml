@@ -188,7 +188,7 @@ phases:
         sweepingOutputScope: null
         templateExpressions: null
         timeoutMillis: 600000
-      templateUri: Harness SE/Diego/Run Pod CV-DEMO Command:latest
+      templateUri: Harness SE/Diego/Canary Instance Config Setup:latest
       templateVariables:
       - name: logsPerMinute
         value: '500'

@@ -21,7 +21,7 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 1
-  workflowName: cv-demo-canary
+  workflowName: Canary Workflow
   workflowVariables:
   - name: verify_canary
     value: 'no'
