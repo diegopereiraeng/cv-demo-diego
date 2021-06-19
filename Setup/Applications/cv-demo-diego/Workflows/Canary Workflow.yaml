@@ -58,8 +58,12 @@ phases:
     - type: K8S_CANARY_DEPLOY
       name: Canary Deployment
       properties:
-        instanceUnitType: COUNT
-        instances: '1'
+        instanceUnitType: PERCENTAGE
+        instances: '20'
+        stateTimeoutInMinutes: 10
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     - type: SHELL_SCRIPT
       name: Slack Notification Canary Deployed
       properties:
