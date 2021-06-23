@@ -1,3 +1,4 @@
-namespace: ${infra.kubernetes.namespace}
-
-loadBalancerIP: ""
+#namespace: ${infra.kubernetes.namespace}
+namespace: <+infrastructure.infrastructureDefinition.spec.namespace>
+#loadBalancerIP: ""
+loadBalancer: <+serviceConfig.serviceDefinition.spec.variables.loadBalancerIP>
