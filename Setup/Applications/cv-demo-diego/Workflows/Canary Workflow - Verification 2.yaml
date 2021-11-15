@@ -21,8 +21,8 @@ notificationRules:
   executionScope: WORKFLOW
   notificationGroupAsExpression: false
   userGroupAsExpression: false
-  userGroupIds:
-  - PFIVcv84TVW6OEpQEDvmGw
+  userGroupNames:
+  - Account Administrator
 - conditions:
   - SUCCESS
   - FAILED
@@ -30,8 +30,8 @@ notificationRules:
   executionScope: WORKFLOW
   notificationGroupAsExpression: false
   userGroupAsExpression: false
-  userGroupIds:
-  - V04HA3qrSleRPFexdrm6lw
+  userGroupNames:
+  - Slack-Notification-Demo
 phases:
 - type: KUBERNETES
   computeProviderName: Kubernetes Cluster Diego-GKE
@@ -55,11 +55,11 @@ phases:
       name: Slack Notification Canary Deployed
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         publishAsVar: false
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -178,12 +178,12 @@ phases:
       name: Good Config
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         includeInfraSelectors: true
         publishAsVar: false
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -232,12 +232,12 @@ phases:
       name: Load Test
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         includeInfraSelectors: true
         publishAsVar: false
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -268,6 +268,7 @@ phases:
         comparisonStrategy: COMPARE_WITH_CURRENT
         customThresholdRefId: 0034526e5f2a4a3ea97011a559dda999
         executeWithPreviousSteps: true
+        metric-thresholds: []
         templateUuid: null
         templateVariables: null
         templateVersion: null
@@ -321,16 +322,17 @@ phases:
         customThresholdRefId: 2f0391c47265474aac8dd39c9a49f096
         executeWithPreviousSteps: true
         includePreviousPhaseNodes: false
+        metric-thresholds: []
         timeDuration: '10'
     - type: SHELL_SCRIPT
       name: Slack Notification Verification Completed
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         publishAsVar: false
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -432,11 +434,11 @@ preDeploymentSteps:
   name: Slack Notification Kickoff
   properties:
     commandPath: null
-    connectionAttributes: null
+    connectionAttributeName: null
     executeOnDelegate: true
     host: null
     publishAsVar: false
-    sshKeyRef: null
+    sshKeyRefName: null
     sweepingOutputName: null
     sweepingOutputScope: null
     templateExpressions: null
@@ -490,11 +492,11 @@ rollbackPhases:
       name: Slack Notification Rollback with Success
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         publishAsVar: false
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null

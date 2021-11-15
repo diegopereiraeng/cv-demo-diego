@@ -6,8 +6,8 @@ notificationRules:
   executionScope: WORKFLOW
   notificationGroupAsExpression: false
   userGroupAsExpression: false
-  userGroupIds:
-  - PFIVcv84TVW6OEpQEDvmGw
+  userGroupNames:
+  - Account Administrator
 phases:
 - daemonSet: false
   name: Phase 1
@@ -22,7 +22,7 @@ phases:
       name: Shell Script
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: ''
@@ -47,7 +47,7 @@ phases:
 
 
         scriptType: BASH
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -59,11 +59,11 @@ phases:
       name: Slack Notification
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         publishAsVar: false
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null

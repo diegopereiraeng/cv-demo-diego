@@ -14,8 +14,8 @@ notificationRules:
   executionScope: WORKFLOW
   notificationGroupAsExpression: false
   userGroupAsExpression: false
-  userGroupIds:
-  - PFIVcv84TVW6OEpQEDvmGw
+  userGroupNames:
+  - Account Administrator
 phases:
 - type: KUBERNETES
   computeProviderName: K8S Diego GKE
@@ -30,7 +30,7 @@ phases:
       name: Shell Script
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         includeInfraSelectors: true
@@ -41,7 +41,7 @@ phases:
 
           export test
         scriptType: BASH
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: check
         sweepingOutputScope: PIPELINE
         templateExpressions: null

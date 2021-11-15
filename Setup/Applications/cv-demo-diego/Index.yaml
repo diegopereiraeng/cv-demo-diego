@@ -1,4 +1,7 @@
 harnessApiVersion: '1.0'
 type: APPLICATION
+branchName: main
+gitConnector: Diego CV-DEMO
+isGitSyncEnabled: true
 tags:
   verification_enabled: ''
